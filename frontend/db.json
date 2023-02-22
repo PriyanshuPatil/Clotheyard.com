@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "price": 2000,
+      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image2": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image3": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image4": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "typicode",
+      "price": 2000,
+      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image2": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image3": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image4": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1"
+    },
+    {
+      "id": 3,
+      "title": "json-server",
+      "author": "typicode",
+      "price": 2000,
+      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image2": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image3": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "image4": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "price": 2000,
+      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "title": "json-server"
+    },
+    {
+      "id": 2,
+      "price": 1000,
+      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "title": "json-server"
+    },
+    {
+      "id": 3,
+      "price": 200,
+      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
+      "title": "json-server"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
