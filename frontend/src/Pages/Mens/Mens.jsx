@@ -17,7 +17,41 @@ import {
 import { AiOutlineShopping } from "react-icons/ai";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import styles from "./Mens.module.css";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+
+let CategoryObj = [
+  {
+    id: 1,
+    name: "clothing",
+  },
+  {
+    id: 2,
+    name: "shoes",
+  },
+  {
+    id: 3,
+    name: "accessories",
+  },
+  {
+    id: 4,
+    name: "coat",
+  },
+  {
+    id: 4,
+    name: "coat",
+  },
+  {
+    id: 4,
+    name: "coat",
+  },
+  {
+    id: 4,
+    name: "coat",
+  },
+  {
+    id: 4,
+    name: "coat",
+  },
+];
 
 const Mens = () => {
   const [mensData, setMensData] = useState([]);
@@ -27,7 +61,7 @@ const Mens = () => {
   const Mensdatafetch = async () => {
     try {
       let data = await axios(`http://localhost:8080/mens`);
-      return setMensData(data.data);
+      return setMensData(data.data), setMensType(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -53,6 +87,15 @@ const Mens = () => {
     setMensData([...sortfuncHigh]);
   };
 
+  // /* Filter Function */
+  const handleFilterData = (e) => {
+    // const CarTypeData = mensData.filter((ele) => ele.type === e.target.value);
+    // setMensData([...CarTypeData]);
+    // alert(e.target.value);
+    console.log('e:', e.target.value)
+    // console.log('CarTypeData:', CarTypeData)
+  };
+
   useEffect(() => {
     Mensdatafetch();
   }, []);
@@ -61,32 +104,33 @@ const Mens = () => {
   return (
     <div>
       <Box w={"90%"} m="auto">
-        <Box>
+        <Box h={"4rem"}>
           <Flex justifyContent={"space-between"}>
             <Text fontWeight={"bold"} fontSize="28px">
               Men
             </Text>
-            {/* {mensType.map((e, index) => {
+            {CategoryObj.map((e, index) => {
               return (
-                <Box key={index}>
-                  <Text
-                    mt="3"
-                    fontSize={"16px"}
-                    fontWeight="bold"
-                    color={"gray.500"}
-                    // onClick={() => handleClick(e.path)}
-                  >
+                <Button
+                  value={e.name}
+                  onClick={(e) => handleFilterData(e)}
+                  _hover={{ backgroundColor: "fff" }}
+                  bgColor={"white"}
+                  cursor={"pointer"}
+                  key={index}
+                >
+                  <Text fontSize={"16px"} fontWeight="bold" color={"gray.500"}>
                     {e.name}
                   </Text>
-                </Box>
+                </Button>
               );
-            })} */}
+            })}
           </Flex>
         </Box>
         <hr />
         <Flex flexDirection={"row"} justifyContent="space-between">
           {/* <FilterModel /> */}
-          <Box w="25%">
+          <Box w="fit-content">
             <Flex justifyContent={"space-between"} gap={4}>
               <Box textAlign={"center"}>
                 <Heading fontSize={"px"} paddingTop={2} color="gray.400">
@@ -98,7 +142,8 @@ const Mens = () => {
                   <>
                     <MenuButton
                       as={Button}
-                      w="100%"
+                      w={"fit-content"}
+                      // w={"150px"}
                       border={"2px solid black"}
                       bgColor="white"
                       color={"black"}
@@ -128,7 +173,7 @@ const Mens = () => {
         ]}
         gap={1}
         mt={0}
-        w={"90%"}
+        w={"92%"}
         m="auto"
       >
         {mensData?.map((item) => (
