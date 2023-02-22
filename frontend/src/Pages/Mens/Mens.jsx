@@ -40,7 +40,7 @@ const Mens = () => {
     /* 
     --> so after the sorting of the data
         We are creating a array and in that new array
-        we are spereading new sorted data into them ...
+        we are spreading new sorted data into them ...
         then we are setting the updated array into that setState()
     */
     setMensData([...sortfuncLow]);
