@@ -13,10 +13,13 @@ import {
   MenuItem,
   Heading,
   Select,
+  Skeleton,
 } from "@chakra-ui/react";
 import { AiOutlineShopping } from "react-icons/ai";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import styles from "./Mens.module.css";
+import LoadingSkeleton from "../Skeleton/Skeleton";
+import { Link } from "react-router-dom";
 
 let CategoryObj = [
   {
@@ -25,31 +28,19 @@ let CategoryObj = [
   },
   {
     id: 2,
-    name: "shoes",
-  },
-  {
-    id: 3,
     name: "accessories",
   },
   {
-    id: 4,
+    id: 3,
     name: "coat",
   },
   {
     id: 4,
-    name: "coat",
+    name: "shoes",
   },
   {
-    id: 4,
-    name: "coat",
-  },
-  {
-    id: 4,
-    name: "coat",
-  },
-  {
-    id: 4,
-    name: "coat",
+    id: 5,
+    name: "pajama_pants",
   },
 ];
 
@@ -88,12 +79,15 @@ const Mens = () => {
   };
 
   // /* Filter Function */
-  const handleFilterData = (e) => {
-    // const CarTypeData = mensData.filter((ele) => ele.type === e.target.value);
-    // setMensData([...CarTypeData]);
-    // alert(e.target.value);
-    console.log('e:', e.target.value)
-    // console.log('CarTypeData:', CarTypeData)
+  const handleFilterData = (ele) => {
+    /* 
+    --> so here if mensData's type of userclick element type is same
+        so we are setting the data into that state
+    */
+    const CarTypeData = mensData.filter(
+      (el) => el.type === ele.target.innerText
+    );
+    setMensData([...CarTypeData]);
   };
 
   useEffect(() => {
@@ -101,136 +95,156 @@ const Mens = () => {
   }, []);
 
   useEffect(() => {}, [mensData]);
-  return (
-    <div>
-      <Box w={"90%"} m="auto">
-        <Box h={"4rem"}>
-          <Flex justifyContent={"space-between"}>
-            <Text fontWeight={"bold"} fontSize="28px">
-              Men
-            </Text>
-            {CategoryObj.map((e, index) => {
-              return (
-                <Button
-                  value={e.name}
-                  onClick={(e) => handleFilterData(e)}
-                  _hover={{ backgroundColor: "fff" }}
-                  bgColor={"white"}
-                  cursor={"pointer"}
-                  key={index}
-                >
-                  <Text fontSize={"16px"} fontWeight="bold" color={"gray.500"}>
-                    {e.name}
-                  </Text>
-                </Button>
-              );
-            })}
-          </Flex>
-        </Box>
-        <hr />
-        <Flex flexDirection={"row"} justifyContent="space-between">
-          {/* <FilterModel /> */}
-          <Box w="fit-content">
-            <Flex justifyContent={"space-between"} gap={4}>
-              <Box textAlign={"center"}>
-                <Heading fontSize={"px"} paddingTop={2} color="gray.400">
-                  ({mensData.length}items)
-                </Heading>
-              </Box>
-              <Menu>
-                {({ isOpen }) => (
-                  <>
-                    <MenuButton
-                      as={Button}
-                      w={"fit-content"}
-                      // w={"150px"}
-                      border={"2px solid black"}
-                      bgColor="white"
-                      color={"black"}
-                      borderRadius={"18px"}
-                      isActive={isOpen}
-                      rightIcon={<HiOutlineArrowsUpDown color="black" />}
+
+  if (mensData.length === 0) {
+    return <LoadingSkeleton />;
+  } else
+    return (
+      <div>
+        <Box w={"90%"} m="auto">
+          <Box h={"4rem"}>
+            <Flex justifyContent={"space-between"}>
+              <Text fontWeight={"bold"} fontSize="28px">
+                Men
+              </Text>
+              {CategoryObj.map((e, index) => {
+                return (
+                  <Button
+                    key={index}
+                    value={e.name}
+                    onClick={(ele) => handleFilterData(ele)}
+                    _hover={{ backgroundColor: "fff" }}
+                    bgColor={"white"}
+                    cursor={"pointer"}
+                  >
+                    <Text
+                      fontSize={"16px"}
+                      fontWeight="bold"
+                      color={"gray.500"}
                     >
-                      {isOpen ? "Order" : "SortBy"}
-                    </MenuButton>
-                    <MenuList>
-                      <MenuItem onClick={handleLowtoHigh}>Low to High</MenuItem>
-                      <MenuItem onClick={handleHightoLow}>High to low</MenuItem>
-                    </MenuList>
-                  </>
-                )}
-              </Menu>
+                      {e.name}
+                    </Text>
+                  </Button>
+                );
+              })}
             </Flex>
           </Box>
-        </Flex>
-      </Box>
-      <Grid
-        templateColumns={[
-          "repeat(1, 1fr)",
-          "repeat(2, 1fr)",
-          "repeat(3, 1fr)",
-          "repeat(4, 1fr)",
-        ]}
-        gap={1}
-        mt={0}
-        w={"92%"}
-        m="auto"
-      >
-        {mensData?.map((item) => (
-          <Box
-            className="imagecontainer"
-            w="90%"
-            m="auto"
-            align={"center"}
-            key={item._id}
-            bgColor="white"
-            mt={4}
-            cursor={"pointer"}
-            //   onClick={() => handleOnNextpage(item._id)}
-          >
-            <Image
-              className={styles.MensProductsImage}
-              h="320px"
-              w={"100%"}
-              src={item.imgUrl}
-              alt="img"
-              mt="2"
-            />
+          <hr />
+          <Flex flexDirection={"row"} justifyContent="space-between">
+            <Box w="100%">
+              <Flex justifyContent={"space-between"} gap={4}>
+                <Flex>
+                  <Box textAlign={"center"}>
+                    <Heading
+                      fontWeight={"500"}
+                      fontSize={"15px"}
+                      paddingTop={2}
+                      style={{ color: "#828282" }}
+                    >
+                      ({mensData.length}items)
+                    </Heading>
+                  </Box>
+                </Flex>
 
-            <Box display={"flex"} justifyContent="space-between" mt={2}>
-              <Text color={"#cc1632"} fontWeight="bold">
-                New !
-              </Text>
-              <Box
-                cursor={"pointer"}
-                className={styles.CartSmallBox}
-                _hover={{ backgroundColor: "#005EB8" }}
-                borderRadius={"18%"}
-                w="10%"
-                h="22px"
-                align="center"
-                mr={2}
-              >
-                <AiOutlineShopping className={styles.AiOutlineShopping} />
-              </Box>
+                <Menu>
+                  {({ isOpen }) => (
+                    <>
+                      <MenuButton
+                        as={Button}
+                        w={"fit-content"}
+                        border={"2px solid black"}
+                        bgColor="white"
+                        color={"black"}
+                        borderRadius={"18px"}
+                        isActive={isOpen}
+                        rightIcon={<HiOutlineArrowsUpDown color="black" />}
+                      >
+                        {isOpen ? "Order" : "SortBy"}
+                      </MenuButton>
+                      <MenuList>
+                        <MenuItem onClick={handleLowtoHigh}>
+                          Low to High
+                        </MenuItem>
+                        <MenuItem onClick={handleHightoLow}>
+                          High to low
+                        </MenuItem>
+                      </MenuList>
+                    </>
+                  )}
+                </Menu>
+              </Flex>
             </Box>
-            <Box>
-              <Box textAlign={"left"}>
-                <Text fontSize={"15px"} fontWeight={"600"}>
-                  {item.name}
-                </Text>
-                <Box display={"flex"} justifyContent="flex-start" gap={2}>
-                  <Text alignItems={"left"} fontSize={"15px"}>
-                    ${item.price}
+          </Flex>
+        </Box>
+        <Grid
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={1}
+          mt={0}
+          w={"92%"}
+          m="auto"
+        >
+          {mensData?.map((item, i) => (
+            <Link key={i} to={`/singlepage/${item._id}`}>
+              <Box
+                className="imagecontainer"
+                w="90%"
+                m="auto"
+                align={"center"}
+                key={i}
+                bgColor="white"
+                mt={4}
+                cursor={"pointer"}
+                //   onClick={() => handleOnNextpage(item._id)}
+              >
+                <Image
+                  className={styles.MensProductsImage}
+                  h="320px"
+                  w={"100%"}
+                  src={item.imgUrl}
+                  alt="img"
+                  mt="2"
+                />
+
+                <Box display={"flex"} justifyContent="space-between" mt={2}>
+                  <Text color={"#cc1632"} fontWeight="bold">
+                    New !
                   </Text>
+                  <Box
+                    cursor={"pointer"}
+                    className={styles.CartSmallBox}
+                    _hover={{ backgroundColor: "#005EB8" }}
+                    borderRadius={"18%"}
+                    w="10%"
+                    h="22px"
+                    align="center"
+                    mr={2}
+                  >
+                    <AiOutlineShopping className={styles.AiOutlineShopping} />
+                  </Box>
+                </Box>
+                <Box>
+                  <Box textAlign={"left"}>
+                    <Text fontSize={"15px"} fontWeight={"600"}>
+                      {item.name}
+                    </Text>
+                    <Box display={"flex"} justifyContent="flex-start" gap={2}>
+                      <Text alignItems={"left"} fontSize={"15px"}>
+                        ${item.price}
+                      </Text>
+                    </Box>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          </Box>
-        ))}
-      </Grid>
-    </div>
-  );
+            </Link>
+          ))}
+        </Grid>
+      </div>
+    );
 };
 
 export default Mens;
