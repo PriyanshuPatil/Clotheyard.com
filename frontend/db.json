@@ -1,60 +1,5 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "price": 2000,
-      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image2": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image3": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image4": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1"
-    },
-    {
-      "id": 2,
-      "title": "json-server",
-      "author": "typicode",
-      "price": 2000,
-      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image2": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image3": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image4": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1"
-    },
-    {
-      "id": 3,
-      "title": "json-server",
-      "author": "typicode",
-      "price": 2000,
-      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image2": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image3": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "image4": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1"
-    }
-  ],
-  "cart": [
-    {
-      "id": 1,
-      "price": 2000,
-      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "title": "json-server"
-    },
-    {
-      "id": 2,
-      "price": 1000,
-      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "title": "json-server"
-    },
-    {
-      "id": 3,
-      "price": 200,
-      "image1": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wpp7?ver=64b1",
-      "title": "json-server"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-}  "mens": [
+  "carts": [
     {
       "_id": "639f497f97b38063c0ba2590",
       "imgUrl": "https://www.jcrew.com/s7-img-facade/BE394_NA6445?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
@@ -98,8 +43,60 @@
       "discounted_price": 182.99,
       "type": "shoes",
       "category": "men"
+    }
+  ],
+  "mens": [
+
+    {
+      "id":1,
+      "_id": "639f497f97b38063c0ba2590",
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/BE394_NA6445?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": "J.Crew trail runners",
+      "description": "Introducing our newest sneakers that are designed to perform whether you're taking on trail runs or running around the city. Built with suede and mesh uppers, these comfortable trail runners feature 98 percent recycled Ortholite® footbeds, plus durable Vibram® outsoles.",
+      "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
+      "price": 148,
+      "discounted_price": 106.99,
+      "type": "clothing",
+      "category": "men"
     },
     {
+      "id":2,
+      "_id": "639f497f97b38063c0ba2591",
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/AY197_WZ1852?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": " camp short in cotton-linen",
+      "description": "Inspired by the shorts soldiers once wore during basic training, these camp shorts feature fatigue-style pockets and a comfortable fit. We build them with a cotton-linen blend that's lightweight, naturally breathable and subtly textured. By buying cotton products from J.Crew, you're supporting more responsibly grown cotton through the Better Cotton Initiative.",
+      "discount": " camp short in cotton-linen Item AY197 3.9 / 5  12 REVIEWS $75.00$67.99 (9% Off) or 4 payments of $17.00 with  EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
+      "price": 75,
+      "discounted_price": 67.99,
+      "type": "clothing",
+      "category": "men"
+    },
+    {
+      "id":3,
+      "_id": "639f497f97b38063c0ba2592",
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/BE393_PP2862?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": "Nordic low-top hikers",
+      "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you sure-footed and bone-dry, no matter what the terrain or conditions. Crafted in a low-top silhouette, these versatile hiking shoes are made with suede and nylon uppers. We build them to perform on the trail with Vibram® Rollingait System outsoles, which are specially designed to support the natural motion of the foot. Whether you're in the woods or on city streets, these retro hikers will help you hit your stride.",
+      "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
+      "price": 178,
+      "discounted_price": 116.99,
+      "type": "shoes",
+      "category": "men"
+    },
+    {
+      "id":4,
+      "_id": "639f497f97b38063c0ba2593",
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/BE386_SP2335?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": "Camden crepe-sole slip-ons in English suede",
+      "description": "Our Camden slip-ons are crafted in premium suede from C.F. Stead, a renowned British tannery that boasts well over a century of expertise. Taking cues from vintage styles, this pair can be both rugged and laid-back, and it's extra-comfortable, thanks to its soft crepe soles.",
+      "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
+      "price": 228,
+      "discounted_price": 182.99,
+      "type": "shoes",
+      "category": "men"
+    },
+    {
+      "id":5,
       "_id": "639f497f97b38063c0ba2594",
       "imgUrl": "https://www.jcrew.com/s7-img-facade/AK786_BL8551?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
       "name": "Woven belt",
@@ -111,6 +108,7 @@
       "category": "men"
     },
     {
+      "id":6,
       "_id": "639f497f97b38063c0ba2595",
       "imgUrl": "https://www.jcrew.com/s7-img-facade/BH142_PT1752?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
       "name": "Zip pouch in printed nylon",
@@ -122,6 +120,7 @@
       "category": "men"
     },
     {
+      "id":7,
       "_id": "639f497f97b38063c0ba2596",
       "imgUrl": "https://www.jcrew.com/s7-img-facade/BH140_PT1359?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
       "name": "Five-panel cap in floral print seersucker",
