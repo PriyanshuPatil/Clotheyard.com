@@ -19,7 +19,7 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import styles from "./Mens.module.css";
 import LoadingSkeleton from "../Skeleton/Skeleton";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 let CategoryObj = [
   {
@@ -46,13 +46,28 @@ let CategoryObj = [
 
 const Mens = () => {
   const [mensData, setMensData] = useState([]);
-  const [mensType, setMensType] = useState([]);
+  // const [mensType, setMensType] = useState([]);
+  const { target } = useParams();
+  console.log(target);
+  const [category, setCategory] = useState(target);
   const [selectedValue, setSelectedValue] = useState("");
+  const [filter, setFilter] = useState(undefined);
+  const [page, setPage] = useState(1);
+  const [sort, setSort] = useState();
+  const [order, setOrder] = useState();
 
   const Mensdatafetch = async () => {
     try {
-      let data = await axios(`http://localhost:8080/mens`);
-      return setMensData(data.data), setMensType(data.data);
+      let data = await axios(`http://localhost:8080/${target}`, {
+        params: {
+          type: filter,
+          _page: page,
+          _limit: page && 10,
+          _sort: sort,
+          _order: order,
+        },
+      });
+      return setMensData(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -79,20 +94,24 @@ const Mens = () => {
   };
 
   // /* Filter Function */
-  const handleFilterData = (ele) => {
+  const handleFilterData = async (ele) => {
     /* 
     --> so here if mensData's type of userclick element type is same
         so we are setting the data into that state
     */
-    const CarTypeData = mensData.filter(
+    await Mensdatafetch();
+
+    const filterdata = mensData;
+    const CarTypeData = filterdata.filter(
       (el) => el.type === ele.target.innerText
     );
+    console.log("filterdata", [...CarTypeData]);
     setMensData([...CarTypeData]);
   };
 
   useEffect(() => {
     Mensdatafetch();
-  }, []);
+  }, [filter, page, sort, order]);
 
   useEffect(() => {}, [mensData]);
 
@@ -112,7 +131,7 @@ const Mens = () => {
                   <Button
                     key={index}
                     value={e.name}
-                    onClick={(ele) => handleFilterData(ele)}
+                    onClick={(ele) => setFilter(e.name)}
                     _hover={{ backgroundColor: "fff" }}
                     bgColor={"white"}
                     cursor={"pointer"}
@@ -162,10 +181,28 @@ const Mens = () => {
                         {isOpen ? "Order" : "SortBy"}
                       </MenuButton>
                       <MenuList>
-                        <MenuItem onClick={handleLowtoHigh}>
+                        <MenuItem
+                          onClick={() => {
+                            setSort(undefined);
+                            setOrder(undefined);
+                          }}
+                        >
+                          Default
+                        </MenuItem>
+                        <MenuItem
+                          onClick={() => {
+                            setSort("price");
+                            setOrder("asc");
+                          }}
+                        >
                           Low to High
                         </MenuItem>
-                        <MenuItem onClick={handleHightoLow}>
+                        <MenuItem
+                          onClick={() => {
+                            setSort("price");
+                            setOrder("desc");
+                          }}
+                        >
                           High to low
                         </MenuItem>
                       </MenuList>
