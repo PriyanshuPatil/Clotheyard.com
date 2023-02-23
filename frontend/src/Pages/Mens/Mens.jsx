@@ -45,12 +45,9 @@ let CategoryObj = [
 ];
 
 const Mens = () => {
-  const [mensData, setMensData] = useState([]);
-  // const [mensType, setMensType] = useState([]);
   const { target } = useParams();
-  console.log(target);
+  const [mensData, setMensData] = useState([]);
   const [category, setCategory] = useState(target);
-  const [selectedValue, setSelectedValue] = useState("");
   const [filter, setFilter] = useState(undefined);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState();
@@ -71,42 +68,6 @@ const Mens = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleLowtoHigh = () => {
-    const sortfuncLow = mensData.sort((a, b) => {
-      return a.price - b.price;
-    });
-    /* 
-    --> so after the sorting of the data
-        We are creating a array and in that new array
-        we are spreading new sorted data into them ...
-        then we are setting the updated array into that setState()
-    */
-    setMensData([...sortfuncLow]);
-  };
-
-  const handleHightoLow = () => {
-    const sortfuncHigh = mensData.sort((a, b) => {
-      return b.price - a.price;
-    });
-    setMensData([...sortfuncHigh]);
-  };
-
-  // /* Filter Function */
-  const handleFilterData = async (ele) => {
-    /* 
-    --> so here if mensData's type of userclick element type is same
-        so we are setting the data into that state
-    */
-    await Mensdatafetch();
-
-    const filterdata = mensData;
-    const CarTypeData = filterdata.filter(
-      (el) => el.type === ele.target.innerText
-    );
-    console.log("filterdata", [...CarTypeData]);
-    setMensData([...CarTypeData]);
   };
 
   useEffect(() => {
@@ -131,7 +92,7 @@ const Mens = () => {
                   <Button
                     key={index}
                     value={e.name}
-                    onClick={(ele) => setFilter(e.name)}
+                    onClick={() => setFilter(e.name)}
                     _hover={{ backgroundColor: "fff" }}
                     bgColor={"white"}
                     cursor={"pointer"}
@@ -236,7 +197,6 @@ const Mens = () => {
                 bgColor="white"
                 mt={4}
                 cursor={"pointer"}
-                //   onClick={() => handleOnNextpage(item._id)}
               >
                 <Image
                   className={styles.MensProductsImage}
