@@ -1,0 +1,26 @@
+.main {
+  color: red;
+}
+
+.AiOutlineShopping {
+  color: #005eb8;
+}
+
+.AiOutlineShopping:hover {
+  color: aliceblue;
+  transition: all 0.2s ease-in-out;
+}
+
+.CartSmallBox {
+  padding: 2px 0;
+}
+
+.MensProductsImage {
+  transition: all 0.5s ease-in-out;
+  /* overflow: hidden; */
+  overflow-y: hidden;
+}
+.MensProductsImage:hover {
+  transform: scale(1.08);
+  transition: 0.8s;
+}
