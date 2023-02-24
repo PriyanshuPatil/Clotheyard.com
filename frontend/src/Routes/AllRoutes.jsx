@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Cart } from "../Pages/Cart/cart";
 import DemoPage from "../Pages/DemoPage/DemoPage";
-import Mens from "../Pages/Mens/Mens";
+import Mens from "../Pages/Mens/ProductsPage";
 
 import { Singlepage } from "../Pages/SingleProductPage/singlepage";
 // import Women from "../Pages/Women/Women";

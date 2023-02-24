@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineShopping } from "react-icons/ai";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
-import styles from "./Mens.module.css";
+import styles from "./ProductsPage.module.css";
 import LoadingSkeleton from "../Skeleton/Skeleton";
 import { Link, useParams } from "react-router-dom";
 
@@ -44,16 +44,16 @@ let CategoryObj = [
   },
 ];
 
-const Mens = () => {
+const ProductsPage = () => {
   const { target } = useParams();
-  const [mensData, setMensData] = useState([]);
+  const [ProductsPageData, setProductsPageData] = useState([]);
   const [category, setCategory] = useState(target);
   const [filter, setFilter] = useState(undefined);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState();
   const [order, setOrder] = useState();
 
-  const Mensdatafetch = async () => {
+  const ProductsPagedatafetch = async () => {
     try {
       let data = await axios(`http://localhost:8080/${target}`, {
         params: {
@@ -64,19 +64,19 @@ const Mens = () => {
           _order: order,
         },
       });
-      return setMensData(data.data);
+      return setProductsPageData(data.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    Mensdatafetch();
+    ProductsPagedatafetch();
   }, [filter, page, sort, order, target]);
 
-  useEffect(() => {}, [mensData]);
+  useEffect(() => {}, [ProductsPageData]);
 
-  if (mensData.length === 0) {
+  if (ProductsPageData.length === 0) {
     return <LoadingSkeleton />;
   } else
     return (
@@ -121,7 +121,7 @@ const Mens = () => {
                       paddingTop={2}
                       style={{ color: "#828282" }}
                     >
-                      ({mensData.length}items)
+                      ({ProductsPageData.length}items)
                     </Heading>
                   </Box>
                 </Flex>
@@ -186,7 +186,7 @@ const Mens = () => {
           w={"92%"}
           m="auto"
         >
-          {mensData?.map((item, i) => (
+          {ProductsPageData?.map((item, i) => (
             <Link key={i} to={`/singlepage/${item._id}`}>
               <Box
                 className="imagecontainer"
@@ -198,14 +198,39 @@ const Mens = () => {
                 mt={4}
                 cursor={"pointer"}
               >
-                <Image
-                  className={styles.MensProductsImage}
+                {/* <Image
+                  className={styles.ProductsPageProductsImage}
                   h="320px"
                   w={"100%"}
                   src={item.imgUrl}
                   alt="img"
                   mt="2"
-                />
+                /> */}
+
+                <div className={styles.flipcard}>
+                  <div className={styles.flipcardinner}>
+                    <div className={styles.flipcardfront}>
+                      <Image
+                        className={styles.ProductsPageProductsImage}
+                        h="320px"
+                        w={"100%"}
+                        src={item.imgUrl}
+                        alt="img"
+                        mt="2"
+                      />
+                    </div>
+                    <div className={styles.flipcardback}>
+                      <Image
+                        className={styles.ProductsPageProductsImage}
+                        h="320px"
+                        w={"100%"}
+                        src={item.imgUrl2}
+                        alt="img"
+                        mt="2"
+                      />
+                    </div>
+                  </div>
+                </div>
 
                 <Box display={"flex"} justifyContent="space-between" mt={2}>
                   <Text color={"#cc1632"} fontWeight="bold">
@@ -244,4 +269,4 @@ const Mens = () => {
     );
 };
 
-export default Mens;
+export default ProductsPage;
