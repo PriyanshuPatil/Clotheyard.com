@@ -25,7 +25,7 @@ app.use("/orders", ordersRouter);
 // app.use(Authenticator)
 
 //port information
-app.listen(process.env.port, async () => {
+app.listen(process.env.port || 3000, async () => {
   try {
     await connection;
     console.log("connected to DB");
