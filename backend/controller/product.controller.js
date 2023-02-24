@@ -3,8 +3,39 @@ const { ProductModel } = require("../modal/products.model");
 const getProduct = async (req, res) => {
   // const category=req.params ;
   // type,page,limit,sort,order
+  const { category, type, title, q, _gte, _lte, _limit, _page, _sort, _order } =
+    req.query;
+  let myquery = {};
+  if (category) {
+    myquery.category = category;
+  }
+
+  if (type) {
+    myquery.type = type;
+  }
+
+  if (title) {
+    myquery.title = title;
+  }
+
+  if (q) {
+    myquery.subtitle = { $regex: q, $options: "i" };
+  }
+
+  // if (_gte && _lte) {
+  //   myquery.discounted_price = { $and: [{ $gte: _gte }, { $lte: _lte }] };
+  // } else if (_gte) {
+  //   myquery.discounted_price = { $gte: _gte };
+  // } else if (_lte) {
+  //   myquery.discounted_price = { $lte: _lte };
+  // }
+
+  // console.log(myquery);
   try {
-    const productdata = await ProductModel.find();
+    const productdata = await ProductModel.find(myquery)
+      .sort({ [_sort]: _order })
+      .limit(_limit || 10)
+      .skip((_page - 1) * _limit);
     res.send(productdata);
   } catch (err) {
     res.status(400).send({ msg: err.message });
