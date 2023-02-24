@@ -6,6 +6,7 @@ import "./HomePage.css";
 import img_animation from "../../Assets/ONENESS-DESKTOP-ANIMATION.gif";
 import Mid1 from "../../Assets/mid1.jpg";
 import Mid2 from "../../Assets/mid2.jpg";
+import RadiantImage from "../../Assets/shortsdesktop.jpg";
 import con2_img from "../../Assets/shortgirl.jpg";
 import love_img from "../../Assets/aerofashionlovebag.png";
 import guys_img from "../../Assets/guysshort.jpg";
@@ -247,7 +248,7 @@ const HomePage = () => {
           mt="20px"
           m="auto"
           w="95%"
-          py='1rem'
+          py="1rem"
           display={{
             base: "block",
             md: "block",
@@ -276,7 +277,6 @@ const HomePage = () => {
             }}
             src={Mid2}
           />
-          {/* <img src={profile_img} alt="profile_img" /> */}
         </Flex>
 
         <Box className="HomeContainerAmbassadorSection">
@@ -303,7 +303,6 @@ const HomePage = () => {
               md: "100%",
               lg: "25%",
             }}
-            border="2px solid yellow"
             className="_home__section_1__"
           >
             <Image src={con2_img} alt="short_img" />
@@ -315,29 +314,74 @@ const HomePage = () => {
               md: "100%",
               lg: "30%",
             }}
-            border="2px solid red"
-            className="_home__section_2__"
+            my={{
+              base: "1rem",
+              md: "1rem",
+              lg: "0",
+            }}
+            h={{
+              base: "15rem",
+              md: "20rem",
+              lg: "28rem",
+            }}
+            className="HomeSectionSecondCenter"
           >
-            <div className="_home__textwrap_">
-              <p>
+            <Box className="_home__textwrap_">
+              <Text
+                fontWeight={"700"}
+                fontSize="2rem"
+                color="white"
+                lineHeight={"2.5rem"}
+              >
                 <strong>
                   Girls
                   <br />
                   Shorts
                 </strong>
-              </p>
-              <p>
-                $<span>11</span>.87 &amp; Up
-              </p>
-              <p>
+              </Text>
+              <Text
+                fontSize={"2rem"}
+                color="white"
+                lineHeight={"3rem"}
+                fontWeight="normal"
+                fontStyle={"normal"}
+                letterSpacing="normal"
+                m="0"
+              >
+                $
+                <span style={{ fontSize: "3rem", position: "relative" }}>
+                  11
+                </span>
+                .87 &amp; Up
+              </Text>
+              <Text fontSize={"1.5vw"} mt="0.5rem" color={"white"}>
                 Vibrant prints. Must-feel fabrics.
                 <br />
                 One-of-a-kind Aero style.
-              </p>
-              <Link>Girl Shots</Link>
-            </div>
+              </Text>
+              <Button
+                mt="1rem"
+                w={{
+                  base: "15rem",
+                  md: "15rem",
+                  lg: "90%",
+                }}
+                h={"3rem"}
+                variant="solid"
+                color="black"
+                size="xs"
+                fontSize={"18px"}
+                _hover={{
+                  backgroundColor: "#1e3352",
+                  color: "white",
+                }}
+              >
+                Girl Shots
+              </Button>
+            </Box>
           </Box>
 
+          {/* Carousel section */}
           <Box
             w={{
               base: "100%",
@@ -402,7 +446,7 @@ const HomePage = () => {
           </Box>
         </Flex>
 
-        <div className="__home__container__3__">
+        <Box className="__home__container__3__">
           <div className="__home__img__wrapper__">
             <img src={love_img} alt="love img" />
           </div>
@@ -420,7 +464,7 @@ const HomePage = () => {
             <Link>Free Store Pick Up</Link>
             <Link>Learn More & Stay Safe</Link>
           </div>
-        </div>
+        </Box>
 
         <div className="__home__container__2__">
           <div className="__home__product__carousel">
