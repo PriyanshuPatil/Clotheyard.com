@@ -5,6 +5,7 @@ const {
   updateCartItem,
   addCartItem,
   deleteCartItem,
+  clearCartItems,
 } = require("../controller/cart.controller");
 const { Authenticator } = require("../middleware/authentication.middleware");
 
@@ -28,6 +29,8 @@ cartRouter.patch("/:id", updateCartItem);
 cartRouter.post("/", addCartItem);
 
 // /product/:id -- DELETE/admin ==> To delete single product data.
+
+cartRouter.delete("/clearcart", clearCartItems);
 
 cartRouter.delete("/:id", deleteCartItem);
 

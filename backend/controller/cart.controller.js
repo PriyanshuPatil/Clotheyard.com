@@ -58,10 +58,22 @@ const deleteCartItem = async (req, res) => {
   }
 };
 
+const clearCartItems = async (req, res) => {
+  const { userId } = req.body;
+  try {
+    await CartModel.deleteMany({ userId });
+    res.send({ msg: "Cart is clear" });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ msg: error.message });
+  }
+};
+
 module.exports = {
   getCartItem,
   getSingleCartItem,
   updateCartItem,
   addCartItem,
   deleteCartItem,
+  clearCartItems,
 };
