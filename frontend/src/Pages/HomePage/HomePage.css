@@ -155,29 +155,11 @@
   margin-bottom: 1vw;
 }
 
-.__home__img__wrapper__ {
+.NicetoSeeYouImage {
   margin: 0 auto;
   width: 5%;
-  border: 1px solid olive;
   position: relative;
   top: 1vw;
-}
-
-.__home__img__text__wrapper__ {
-  color: white;
-  border: 1px solid bisque;
-  width: 100%;
-  position: relative;
-  top: 1vw;
-}
-
-.__home__button__container__3__ {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: 1vw;
-  margin-top: 4px;
 }
 
 .__home__button__container__3__ > a {

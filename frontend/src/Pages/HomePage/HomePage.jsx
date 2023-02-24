@@ -286,6 +286,7 @@ const HomePage = () => {
           <Link className="__container__1__learnmore__">Learn More</Link>
         </Box>
 
+        {/* First section Girls Shorts with carousel */}
         <Flex
           justifyContent={"space-between"}
           display={{
@@ -452,20 +453,22 @@ const HomePage = () => {
           </Box>
         </Flex>
 
+        {/* Nice to See You Again! */}
         <Box
           alignItems={"center"}
           w={"100%"}
-          h={{
-            base: "10rem",
-            md: "10rem",
-            lg: "20rem",
+          py={{
+            base: "0.5rem",
+            md: "0.8rem",
+            lg: "1rem",
           }}
+          h={"fit-content"}
           className="HomeNiceToSeeYouSection"
         >
-          <Box className="__home__img__wrapper__">
+          <Box w="5" className="NicetoSeeYouImage">
             <Image h={"auto"} src={love_img} alt="love img" />
           </Box>
-          <Box className="__home__img__text__wrapper__">
+          <Box w="100%" color={"white"}>
             <Text
               mt={{
                 base: "0.2rem",
@@ -477,6 +480,7 @@ const HomePage = () => {
               }}
               textAlign="center"
               fontWeight={"bold"}
+              pt="0.5rem"
             >
               Nice to See You Again!
             </Text>
@@ -508,11 +512,78 @@ const HomePage = () => {
               precautions to keep our customers and associates safe.
             </Text>
           </Box>
-          <div className="__home__button__container__3__">
-            <Link>Find A Store</Link>
-            <Link>Free Store Pick Up</Link>
-            <Link>Learn More & Stay Safe</Link>
-          </div>
+
+          <Flex
+            pt="2rem"
+            w={"70%"}
+            m="auto"
+            mt={{
+              base: "-1rem",
+            }}
+            display={{
+              base: "block",
+              lg: "flex",
+            }}
+            justifyContent="space-between"
+          >
+            <Button
+              mt={{
+                base: "0.5rem",
+              }}
+              _hover={{
+                backgroundColor: "#fff",
+                color: "black",
+              }}
+              color="#fff"
+              border={"2px solid white"}
+              h={"3rem"}
+              variant="outline"
+              w={"15rem"}
+              colorScheme="white"
+              size="xs"
+              fontSize={"18px"}
+            >
+              Find A Store
+            </Button>
+            <Button
+              mt={{
+                base: "0.5rem",
+              }}
+              _hover={{
+                backgroundColor: "#fff",
+                color: "black",
+              }}
+              w={"15rem"}
+              color="#fff"
+              border={"2px solid white"}
+              h={"3rem"}
+              variant="outline"
+              colorScheme="white"
+              size="xs"
+              fontSize={"18px"}
+            >
+              Free Store Pick Up
+            </Button>
+            <Button
+              mt={{
+                base: "0.5rem",
+              }}
+              w={"15rem"}
+              _hover={{
+                backgroundColor: "#fff",
+                color: "black",
+              }}
+              color="#fff"
+              border={"2px solid white"}
+              h={"3rem"}
+              variant="outline"
+              colorScheme="white"
+              size="xs"
+              fontSize={"18px"}
+            >
+              Learn More & Stay Safe
+            </Button>
+          </Flex>
         </Box>
 
         <div className="__home__container__2__">
