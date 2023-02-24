@@ -108,14 +108,16 @@
   background: white;
 }
 
-/* __home__container__2__ */
-
-
-._home__section_2__ {
-  background-image: url("../../Assets/shortsdesktop.jpg");
+.HomeSectionSecondCenter {
   text-align: center;
-  /* width: 30%; */
-  height: 35.5vw;
+  background: rgb(149, 99, 152);
+  border-radius: 10px;
+  background: linear-gradient(
+    283deg,
+    rgba(149, 99, 152, 1) 0%,
+    rgba(60, 148, 196, 1) 35%,
+    rgba(5, 151, 198, 1) 100%
+  );
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
@@ -128,51 +130,16 @@
   margin-left: -0.5vw;
 }
 
-._home__textwrap_ > p {
-  font-weight: 700;
-  font-size: 2.5vw;
-  color: white;
-  line-height: 1;
-}
-
-._home__textwrap_ > p + p {
-  font-size: 2vw;
-  color: white;
-  line-height: 3.4vw;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  margin: 0;
-}
 ._home__textwrap_ > p + p > span {
-  font-size: 5vw;
+  /* font-size: 5vw;
   position: relative;
-  top: 0.9vw;
+  top: 0.9vw; */
 }
 
 ._home__textwrap_ > p + p + p {
   font-size: 1.5vw;
   line-height: 2vw;
   margin-top: 2vw;
-  color: white;
-}
-
-._home__textwrap_ > p + p + p + a {
-  font-weight: 500;
-  line-height: 3vw;
-  text-align: center;
-  transition: 0.3s ease-in-out all;
-  font-size: 1.7vw;
-  border-radius: 0.3vw;
-  background-color: white;
-  color: black;
-  margin: 0.3vw;
-  padding: 8px 80px;
-}
-
-._home__textwrap_ > p + p + p + a:hover {
-  background-color: #1e3352;
   color: white;
 }
 
