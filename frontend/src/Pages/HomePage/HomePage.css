@@ -185,13 +185,13 @@
   align-items: center;
 }
 
-.HomeContainerTeesTankSection > div:first-child {
+/* .HomeContainerTeesTankSection > div:first-child {
   width: 33%;
   height: 37vw;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .HomeContainerTeesTankSection > div:last-child {
   padding-right: 2vw;

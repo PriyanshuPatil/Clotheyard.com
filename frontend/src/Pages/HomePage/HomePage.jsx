@@ -72,12 +72,7 @@ const HomePage = () => {
       {/* main body  */}
 
       <Box w={"100%"} m="auto" py={"10px"}>
-        <Box
-          m="auto"
-          w={"100%"}
-          border={"1px solid red"}
-          className="HomeBannerSection"
-        >
+        <Box m="auto" w={"100%"} className="HomeBannerSection">
           <Box>
             <Image src={img_animation} alt="animation img" />
           </Box>
@@ -121,7 +116,6 @@ const HomePage = () => {
 
         <Flex
           alignItems={"center"}
-          border={"px solid black"}
           display={{
             base: "block",
             md: "block",
@@ -130,7 +124,7 @@ const HomePage = () => {
           mt="20px"
           className="__home__profit__banner__"
         >
-          <Box border={"1px solid red"}>
+          <Box>
             <Text
               py="1rem"
               fontSize={{
@@ -172,7 +166,6 @@ const HomePage = () => {
             m="auto"
             h="auto"
             justifyContent={"center"}
-            border={"1px solid green"}
           >
             <Grid
               gap={"1rem"}
@@ -763,13 +756,12 @@ const HomePage = () => {
             md: "block",
             lg: "flex",
           }}
-          
           justifyContent="space-between"
           mt="1rem"
           className="__home__container__4__"
         >
           <Box
-            border={"1px solid red"}
+            border={"3px solid red"}
             w={{
               base: "100%",
               md: "100%",
@@ -780,7 +772,7 @@ const HomePage = () => {
           </Box>
 
           <Flex
-          border={"2px solid yellow"}
+            border={"2px solid yellow"}
             w={{
               base: "100%",
               md: "100%",
@@ -892,7 +884,7 @@ const HomePage = () => {
 
             {/* Tshit image */}
             <Box>
-              <img src={tshirt_img} alt="tshirt" />
+              <Image w="100%" src={tshirt_img} alt="tshirt" />
             </Box>
           </Flex>
         </Flex>
