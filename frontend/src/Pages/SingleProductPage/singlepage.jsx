@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Box, Button, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react'
 import axios from 'axios'
 
+
 const data={
   id:1,
     category: "Child",
@@ -73,6 +74,8 @@ export const Singlepage = () => {
   axios.get("http://localhost:8080/cart")
   .then(e=>console.log(e))
   .catch(e=>console.log(e))
+
+
     }
   return (<Box w='80%' margin={'auto'}>
     <Heading>Singlepage</Heading>
@@ -80,6 +83,7 @@ export const Singlepage = () => {
 
       <Box w='70%' border={'solid 1px yellow'}>
           <SimpleGrid gap='10px' columns={{lg:2,md:2,sm:1}}>
+
 <img  src={single.images[0]} alt="imagesd"  />
 <img  src={single.images[1]} alt="imagesd"  />
 <img  src={single.images[2]} alt="imagesd"  />
@@ -93,6 +97,7 @@ export const Singlepage = () => {
       <Text size={'md'}>{single.type}</Text>
       <Heading size={'md'}>${single.strike_price}</Heading>
       {/* <Text size={'md'}>{single.discount}</Text> */}
+
       <Text size={'sl'}>Size:Select Size</Text>
       <Box borderColor={'red'}>
         <Flex gap='10px'>
