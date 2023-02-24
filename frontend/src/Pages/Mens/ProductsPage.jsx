@@ -198,15 +198,6 @@ const ProductsPage = () => {
                 mt={4}
                 cursor={"pointer"}
               >
-                {/* <Image
-                  className={styles.ProductsPageProductsImage}
-                  h="320px"
-                  w={"100%"}
-                  src={item.imgUrl}
-                  alt="img"
-                  mt="2"
-                /> */}
-
                 <div className={styles.flipcard}>
                   <div className={styles.flipcardinner}>
                     <div className={styles.flipcardfront}>
@@ -231,7 +222,6 @@ const ProductsPage = () => {
                     </div>
                   </div>
                 </div>
-
                 <Box display={"flex"} justifyContent="space-between" mt={2}>
                   <Text color={"#cc1632"} fontWeight="bold">
                     New !
