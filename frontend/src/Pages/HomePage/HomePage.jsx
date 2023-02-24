@@ -250,7 +250,6 @@ const HomePage = () => {
           columnGap={"1rem"}
           cursor={"pointer"}
           alignItems="center"
-          className="__home__wrap__profile__"
         >
           <Image
             w={{
@@ -742,7 +741,6 @@ const HomePage = () => {
               md: "100%",
               lg: "25%",
             }}
-            className="_home__section_1__"
           >
             <Image src={guys_img} alt="short_img" />
           </Box>
@@ -755,8 +753,9 @@ const HomePage = () => {
             md: "block",
             lg: "flex",
           }}
+          alignItems={"center"}
           justifyContent="space-between"
-          mt="1rem"
+          mt={{ base: "1rem", lg: "2rem" }}
         >
           {/* Tees Tanks girl image Section */}
           <Box
@@ -765,7 +764,6 @@ const HomePage = () => {
               md: "100%",
               lg: "23%",
             }}
-            h="320px"
           >
             <Image src={girl_sec} alt="short_img" />
           </Box>
@@ -782,8 +780,8 @@ const HomePage = () => {
               md: "block",
               lg: "flex",
             }}
-            mt="1rem"
-            py="1rem"
+            py="2rem"
+            mt={"1rem"}
             className="HomeContainerTeesTankSection"
           >
             {/* Tees & Tanks text */}
@@ -805,7 +803,12 @@ const HomePage = () => {
                 lg: "28rem",
               }}
             >
-              <Box>
+              <Box
+                mt={{
+                  base: "0",
+                  lg: "3rem",
+                }}
+              >
                 <Text
                   fontWeight={"700"}
                   fontSize="2rem"
@@ -882,9 +885,9 @@ const HomePage = () => {
             </Box>
 
             {/* Tshit image */}
-            <Box>
+            <Box m='auto' w={{ base: "98%", lg: "65%" }}>
               <Image
-                w="100%"
+                w={"100%"}
                 borderRadius={"8px"}
                 src={tshirt_img}
                 alt="tshirt"
