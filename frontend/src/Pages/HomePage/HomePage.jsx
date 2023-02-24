@@ -6,7 +6,6 @@ import "./HomePage.css";
 import img_animation from "../../Assets/ONENESS-DESKTOP-ANIMATION.gif";
 import Mid1 from "../../Assets/mid1.jpg";
 import Mid2 from "../../Assets/mid2.jpg";
-import RadiantImage from "../../Assets/shortsdesktop.jpg";
 import con2_img from "../../Assets/shortgirl.jpg";
 import love_img from "../../Assets/aerofashionlovebag.png";
 import guys_img from "../../Assets/guysshort.jpg";
@@ -297,17 +296,18 @@ const HomePage = () => {
           columnGap="0.5rem"
           alignItems="center"
         >
+          {/* Girl image */}
           <Box
             w={{
               base: "100%",
               md: "100%",
               lg: "25%",
             }}
-            className="_home__section_1__"
           >
             <Image src={con2_img} alt="short_img" />
           </Box>
 
+          {/* Girls sort section center part */}
           <Box
             w={{
               base: "100%",
@@ -586,8 +586,28 @@ const HomePage = () => {
           </Flex>
         </Box>
 
-        <div className="__home__container__2__">
-          <div className="__home__product__carousel">
+        {/* Boys section with carousel  */}
+
+        <Flex
+          justifyContent={"space-between"}
+          display={{
+            base: "block",
+            md: "block",
+            lg: "flex",
+          }}
+          columnGap="0.5rem"
+          alignItems="center"
+        >
+          {/* Carousel  */}
+          <Box
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "45%",
+            }}
+            overflow="hidden"
+            textAlign={"center"}
+          >
             <Carousel
               responsive={responsive}
               autoPlay={true}
@@ -640,72 +660,242 @@ const HomePage = () => {
                 <p>Slim Cuffed</p>
               </div>
             </Carousel>
-          </div>
+          </Box>
 
-          <div className="_home__section_2__">
-            <div className="_home__textwrap_">
-              <p>
+          {/* Girls sort section center part */}
+          <Box
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "30%",
+            }}
+            my={{
+              base: "1rem",
+              md: "1rem",
+              lg: "0",
+            }}
+            h={{
+              base: "18rem",
+              md: "22rem",
+              lg: "28rem",
+            }}
+            className="HomeSectionSecondCenter"
+          >
+            <Box className="_home__textwrap_">
+              <Text
+                fontWeight={"700"}
+                fontSize="2rem"
+                color="white"
+                lineHeight={"2.5rem"}
+              >
                 <strong>
-                  Guys
+                  Boys
                   <br />
                   Shorts
                 </strong>
-              </p>
-              <p>
-                $<span>12</span> &amp; Up
-              </p>
-              <p>
+              </Text>
+              <Text
+                fontSize={"2rem"}
+                color="white"
+                lineHeight={"3rem"}
+                fontWeight="normal"
+                fontStyle={"normal"}
+                letterSpacing="normal"
+                m="0"
+              >
+                $
+                <span style={{ fontSize: "3rem", position: "relative" }}>
+                  12
+                </span>
+                .87 &amp; Up
+              </Text>
+              <Text
+                fontSize={{
+                  base: "0.8rem",
+                  lg: "1.2rem",
+                }}
+                mt="0.5rem"
+                color={"white"}
+              >
                 New Premium fabric elevated
                 <br />
-                with extra stretch for comfort
-                <br />
-                and 360° of freedom
-              </p>
-              <Link>Boys Shots</Link>
-            </div>
-          </div>
+                with extra stretch for comfort and 360° of freedom.
+              </Text>
+              <Button
+                mt="1rem"
+                w={{
+                  base: "15rem",
+                  md: "15rem",
+                  lg: "90%",
+                }}
+                h={"3rem"}
+                variant="solid"
+                color="black"
+                size="xs"
+                fontSize={"18px"}
+                _hover={{
+                  backgroundColor: "#1e3352",
+                  color: "white",
+                }}
+              >
+                Girl Shots
+              </Button>
+            </Box>
+          </Box>
 
-          <div className="_home__section_2__guys">
-            <img src={guys_img} alt="short_img" />
-          </div>
-        </div>
+          {/* Boy image */}
+          <Box
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "25%",
+            }}
+            className="_home__section_1__"
+          >
+            <Image src={guys_img} alt="short_img" />
+          </Box>
+        </Flex>
 
-        <div className="__home__container__4__">
-          <div>
-            <img src={girl_sec} alt="girlpost" />
-          </div>
+        {/* Tees & Tanks girl image */}
+        <Flex
+          display={{
+            base: "block",
+            md: "block",
+            lg: "flex",
+          }}
+          
+          justifyContent="space-between"
+          mt="1rem"
+          className="__home__container__4__"
+        >
+          <Box
+            border={"1px solid red"}
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "23%",
+            }}
+          >
+            <Image src={girl_sec} alt="short_img" />
+          </Box>
 
-          <div className="__home__container__4__wrap__">
-            <div>
-              <div className="_home__textwrap_">
-                <p>
-                  <strong>
-                    Tees &
-                    <br />
-                    Tanks
-                  </strong>
-                </p>
-                <p>
-                  $<span>6</span>.87 &amp; Up
-                </p>
-                <p>
-                  Wear what you feel with
-                  <br />
-                  statement-making graphics
-                  <br />
-                  and fun splashes of color.
-                </p>
-                <div className="__home__container__4__link_button__">
-                  <Link>Shop Girls Tees</Link>
-                  <Link>Shop Gusy Tees</Link>
-                </div>
-              </div>
-            </div>
-            <div>
+          <Flex
+          border={"2px solid yellow"}
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "75%",
+            }}
+            display={{
+              base: "block",
+              md: "block",
+              lg: "flex",
+            }}
+            h="fit-content"
+            py="1rem"
+            className="HomeContainerTeesTankSection"
+          >
+            {/* Tees & Tanks text */}
+            <Box
+              px="0.5rem"
+              w={{
+                base: "100%",
+                md: "100%",
+                lg: "30%",
+              }}
+              my={{
+                base: "1rem",
+                md: "1rem",
+                lg: "0",
+              }}
+              h={{
+                base: "18rem",
+                md: "22rem",
+                lg: "28rem",
+              }}
+            >
+              <Box className="_home__textwrap_">
+                <Text
+                  fontWeight={"700"}
+                  fontSize="2rem"
+                  color="white"
+                  lineHeight={"2.5rem"}
+                >
+                  <strong>Tees & Tanks</strong>
+                </Text>
+                <Text
+                  fontSize={"2rem"}
+                  color="white"
+                  lineHeight={"3rem"}
+                  fontWeight="normal"
+                  fontStyle={"normal"}
+                  letterSpacing="normal"
+                  m="0"
+                >
+                  $
+                  <span style={{ fontSize: "3rem", position: "relative" }}>
+                    6
+                  </span>
+                  .87 &amp; Up
+                </Text>
+                <Text
+                  fontSize={{
+                    base: "0.8rem",
+                    lg: "1.2rem",
+                  }}
+                  mt="0.5rem"
+                  color={"white"}
+                >
+                  Wear what you feel with statement-making graphics and fun
+                  splashes of color.
+                </Text>
+                <Button
+                  mt="1rem"
+                  w={{
+                    base: "15rem",
+                    md: "15rem",
+                    lg: "90%",
+                  }}
+                  h={"3rem"}
+                  variant="solid"
+                  color="black"
+                  size="xs"
+                  fontSize={"18px"}
+                  _hover={{
+                    backgroundColor: "#1e3352",
+                    color: "white",
+                  }}
+                >
+                  Shop Girls Tees
+                </Button>
+                <Button
+                  mt="1rem"
+                  w={{
+                    base: "15rem",
+                    md: "15rem",
+                    lg: "90%",
+                  }}
+                  h={"3rem"}
+                  variant="solid"
+                  color="black"
+                  size="xs"
+                  fontSize={"18px"}
+                  _hover={{
+                    backgroundColor: "#1e3352",
+                    color: "white",
+                  }}
+                >
+                  Shop Guys Tees
+                </Button>
+              </Box>
+            </Box>
+
+            {/* Tshit image */}
+            <Box>
               <img src={tshirt_img} alt="tshirt" />
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Flex>
+        </Flex>
 
         <div className="__home__container__5__">
           <div className="__home__product__carousel">

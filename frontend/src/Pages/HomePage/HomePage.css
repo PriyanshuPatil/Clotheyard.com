@@ -162,47 +162,21 @@
   top: 1vw;
 }
 
-.__home__button__container__3__ > a {
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 3vw;
-  letter-spacing: normal;
-  text-align: center;
-  transition: 0.2s ease-in-out all;
-  display: inline-block !important;
-  justify-content: center;
-  align-items: center;
-  width: 17vw;
-  font-size: 1.2vw;
-  border-width: 2px;
-  border-radius: 0.3vw;
-  background-color: transparent;
-  color: white;
-  margin: 0.3vw;
-}
-
-.__home__button__container__3__ > a:hover {
-  background-color: white;
-  color: black;
-}
-
 /* __home__container__4__  */
-
-.__home__container__4__ {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
 
 .__home__container__4__ > div:nth-child(1) {
   width: 23.2%;
 }
 
-.__home__container__4__wrap__ {
-  background-image: url("../../Assets/container4back.jpg");
-  width: 75%;
+.HomeContainerTeesTankSection {
+  background: rgb(118, 82, 156);
+  background: linear-gradient(
+    138deg,
+    rgba(118, 82, 156, 1) 0%,
+    rgba(45, 167, 191, 1) 35%,
+    rgba(242, 137, 97, 1) 100%
+  );
+  border-radius: 10px;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -211,7 +185,7 @@
   align-items: center;
 }
 
-.__home__container__4__wrap__ > div:first-child {
+.HomeContainerTeesTankSection > div:first-child {
   width: 33%;
   height: 37vw;
   display: flex;
@@ -219,17 +193,17 @@
   align-items: center;
 }
 
-.__home__container__4__wrap__ > div:last-child {
+.HomeContainerTeesTankSection > div:last-child {
   padding-right: 2vw;
   width: 66%;
 }
 
-.__home__container__4__wrap__ > div:last-child > img {
+.HomeContainerTeesTankSection > div:last-child > img {
   width: 100%;
   border-radius: 1.5vw;
 }
 
-.__home__container__4__wrap__ > div > div > p:nth-child(3) {
+.HomeContainerTeesTankSection > div > div > p:nth-child(3) {
   display: flex;
   justify-content: center;
 }
