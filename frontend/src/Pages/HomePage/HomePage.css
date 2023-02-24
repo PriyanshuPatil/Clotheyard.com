@@ -125,10 +125,6 @@
   align-items: center;
 }
 
-._home__textwrap_ {
-  margin-left: -0.5vw;
-}
-
 .react-multiple-carousel__arrow {
   display: none;
 }
@@ -162,12 +158,6 @@
   top: 1vw;
 }
 
-/* __home__container__4__  */
-
-.__home__container__4__ > div:nth-child(1) {
-  width: 23.2%;
-}
-
 .HomeContainerTeesTankSection {
   background: rgb(118, 82, 156);
   background: linear-gradient(
@@ -176,60 +166,31 @@
     rgba(45, 167, 191, 1) 35%,
     rgba(242, 137, 97, 1) 100%
   );
+  height: fit-content;
+  padding: 1rem 0;
+  border: 2px solid palevioletred;
   border-radius: 10px;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* .HomeContainerTeesTankSection > div:first-child {
-  width: 33%;
-  height: 37vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.HomeContainerTeesTankSection > div:first-child {
+  /* width: 33%; */
+  /* justify-content: center;
+  align-items: center; */
+}
 
 .HomeContainerTeesTankSection > div:last-child {
   padding-right: 2vw;
   width: 66%;
 }
 
-.HomeContainerTeesTankSection > div:last-child > img {
-  width: 100%;
-  border-radius: 1.5vw;
-}
-
 .HomeContainerTeesTankSection > div > div > p:nth-child(3) {
   display: flex;
   justify-content: center;
-}
-
-.__home__container__4__link_button__ > a {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  color: #1e3352;
-  padding-top: 0.7%;
-  font-size: 1.4vw;
-  margin-top: 1vw;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 3vw;
-  letter-spacing: normal;
-  text-align: center;
-  transition: 0.2s ease-in-out all;
-  padding: 0;
-  border-radius: 0.3vw;
-}
-
-.__home__container__4__link_button__ > a:hover {
-  background-color: #1e3352;
-  color: white;
 }
 
 /* __home__container__5__  */

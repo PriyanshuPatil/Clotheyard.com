@@ -200,7 +200,7 @@ const HomePage = () => {
                 size="xs"
                 fontSize={"18px"}
               >
-                Girls Shorts <strong>$11.87 & Up</strong>
+                Girls Shorts <strong> $11.87 & Up</strong>
               </Button>
               <Button
                 _hover={{
@@ -230,7 +230,7 @@ const HomePage = () => {
                 size="xs"
                 fontSize={"18px"}
               >
-                Guys Shorts <strong>$12 & Up</strong>
+                Guys Shorts <strong> $12 & Up</strong>
               </Button>
             </Grid>
           </Box>
@@ -239,7 +239,7 @@ const HomePage = () => {
         <Flex
           mt="20px"
           m="auto"
-          w="95%"
+          w="100%"
           py="1rem"
           display={{
             base: "block",
@@ -258,7 +258,7 @@ const HomePage = () => {
               md: "100%",
               lg: "50%",
             }}
-            marginBottom="1rem"
+            marginBottom={{ base: "1rem", lg: "0" }}
             src={Mid1}
           />
           <Image
@@ -315,7 +315,7 @@ const HomePage = () => {
             h={{
               base: "18rem",
               md: "22rem",
-              lg: "28rem",
+              lg: "31rem",
             }}
             className="HomeSectionSecondCenter"
           >
@@ -381,7 +381,7 @@ const HomePage = () => {
             </Box>
           </Box>
 
-          {/* Carousel section */}
+          {/*Girls  Carousel section */}
           <Box
             w={{
               base: "100%",
@@ -458,7 +458,7 @@ const HomePage = () => {
           h={"fit-content"}
           className="HomeNiceToSeeYouSection"
         >
-          <Box w="5" className="NicetoSeeYouImage">
+          <Box className="NicetoSeeYouImage">
             <Image h={"auto"} src={love_img} alt="love img" />
           </Box>
           <Box w="100%" color={"white"}>
@@ -580,7 +580,6 @@ const HomePage = () => {
         </Box>
 
         {/* Boys section with carousel  */}
-
         <Flex
           justifyContent={"space-between"}
           display={{
@@ -655,7 +654,7 @@ const HomePage = () => {
             </Carousel>
           </Box>
 
-          {/* Girls sort section center part */}
+          {/* Boys sort section center part */}
           <Box
             w={{
               base: "100%",
@@ -670,7 +669,7 @@ const HomePage = () => {
             h={{
               base: "18rem",
               md: "22rem",
-              lg: "28rem",
+              lg: "29rem",
             }}
             className="HomeSectionSecondCenter"
           >
@@ -749,7 +748,7 @@ const HomePage = () => {
           </Box>
         </Flex>
 
-        {/* Tees & Tanks girl image */}
+        {/* ===== Tees & Tanks Section ====== */}
         <Flex
           display={{
             base: "block",
@@ -758,15 +757,15 @@ const HomePage = () => {
           }}
           justifyContent="space-between"
           mt="1rem"
-          className="__home__container__4__"
         >
+          {/* Tees Tanks girl image Section */}
           <Box
-            border={"3px solid red"}
             w={{
               base: "100%",
               md: "100%",
               lg: "23%",
             }}
+            h="320px"
           >
             <Image src={girl_sec} alt="short_img" />
           </Box>
@@ -783,7 +782,7 @@ const HomePage = () => {
               md: "block",
               lg: "flex",
             }}
-            h="fit-content"
+            mt="1rem"
             py="1rem"
             className="HomeContainerTeesTankSection"
           >
@@ -806,7 +805,7 @@ const HomePage = () => {
                 lg: "28rem",
               }}
             >
-              <Box className="_home__textwrap_">
+              <Box>
                 <Text
                   fontWeight={"700"}
                   fontSize="2rem"
@@ -884,7 +883,12 @@ const HomePage = () => {
 
             {/* Tshit image */}
             <Box>
-              <Image w="100%" src={tshirt_img} alt="tshirt" />
+              <Image
+                w="100%"
+                borderRadius={"8px"}
+                src={tshirt_img}
+                alt="tshirt"
+              />
             </Box>
           </Flex>
         </Flex>
