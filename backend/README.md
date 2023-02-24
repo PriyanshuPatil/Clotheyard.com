@@ -17,7 +17,10 @@ https://dizzy-tuna-twill.cyclic.app/
 /product/:id      ---------->      GET /User/To_get_single_product_data\
 /product/:id      ---------->      PATCH /User/To_update_single_product_data\
 /product/:id      ---------->      DELETE /User/To_delete_single_product_data\
-
+<br />
+Params:-<br />
+category, type, title, q, limit, page, sort, order<br />
+<br />
  # /cart
 
 /cart            ---------->       GET /User/To_get_all_cart_data\
