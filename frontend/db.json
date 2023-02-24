@@ -45,8 +45,11 @@
       "category": "men"
     }
   ],
-  "mens": [
 
+  "profile": {
+    "name": "typicode"
+  },
+  "mens": 
     {
       "id":1,
       "_id": "639f497f97b38063c0ba2590",
