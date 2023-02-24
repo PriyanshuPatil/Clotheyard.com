@@ -14,7 +14,7 @@ import girl_sec from "../../Assets/girlsecondpost.jpg";
 import tshirt_img from "../../Assets/tshirtpost.jpg";
 import last_jeans from "../../Assets/lastjeansimage.jpg";
 import recyle from "../../Assets/recycleicon.svg";
-import { Box, Center, Flex, Grid, Text } from "@chakra-ui/layout";
+import { Box, Flex, Grid, Text } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
 import { Button } from "@chakra-ui/button";
 
@@ -295,7 +295,6 @@ const HomePage = () => {
           }}
           columnGap="0.5rem"
           alignItems="center"
-          // className="__home__container__2__"
         >
           <Box
             w={{
@@ -320,8 +319,8 @@ const HomePage = () => {
               lg: "0",
             }}
             h={{
-              base: "15rem",
-              md: "20rem",
+              base: "18rem",
+              md: "22rem",
               lg: "28rem",
             }}
             className="HomeSectionSecondCenter"
@@ -354,7 +353,14 @@ const HomePage = () => {
                 </span>
                 .87 &amp; Up
               </Text>
-              <Text fontSize={"1.5vw"} mt="0.5rem" color={"white"}>
+              <Text
+                fontSize={{
+                  base: "0.8rem",
+                  lg: "1.2rem",
+                }}
+                mt="0.5rem"
+                color={"white"}
+              >
                 Vibrant prints. Must-feel fabrics.
                 <br />
                 One-of-a-kind Aero style.
@@ -446,19 +452,62 @@ const HomePage = () => {
           </Box>
         </Flex>
 
-        <Box className="__home__container__3__">
-          <div className="__home__img__wrapper__">
-            <img src={love_img} alt="love img" />
-          </div>
-          <div className="__home__img__text__wrapper__">
-            <p>Nice to See You Again!</p>
-            <p>Certain Aero Locations Are Carefully Reopening</p>
-            <p>
+        <Box
+          alignItems={"center"}
+          w={"100%"}
+          h={{
+            base: "10rem",
+            md: "10rem",
+            lg: "20rem",
+          }}
+          className="HomeNiceToSeeYouSection"
+        >
+          <Box className="__home__img__wrapper__">
+            <Image h={"auto"} src={love_img} alt="love img" />
+          </Box>
+          <Box className="__home__img__text__wrapper__">
+            <Text
+              mt={{
+                base: "0.2rem",
+                lg: "0.3rem",
+              }}
+              fontSize={{
+                base: "1rem",
+                lg: "2rem",
+              }}
+              textAlign="center"
+              fontWeight={"bold"}
+            >
+              Nice to See You Again!
+            </Text>
+            <Text
+              mt={"0.1rem"}
+              fontSize={{
+                base: "0.9rem",
+                lg: "1.5rem",
+              }}
+              textAlign="center"
+              fontWeight={"bold"}
+            >
+              Certain Aero Locations Are Carefully Reopening
+            </Text>
+            <Text
+              mt={"0.2rem"}
+              fontSize={{
+                base: "0.7rem",
+                lg: "1.2rem",
+              }}
+              lineHeight={{
+                base: "0.8rem",
+                lg: "1.5rem",
+              }}
+              textAlign="center"
+            >
               & offering FREE storefront pick up. We're taking extra
               <br />
               precautions to keep our customers and associates safe.
-            </p>
-          </div>
+            </Text>
+          </Box>
           <div className="__home__button__container__3__">
             <Link>Find A Store</Link>
             <Link>Free Store Pick Up</Link>
