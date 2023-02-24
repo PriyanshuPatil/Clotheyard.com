@@ -8,8 +8,8 @@ const SignUp = () =>
 {
    return(
  <Box>
-    <Grid  gridTemplateColumns={'450px 1fr'}>
-            <GridItem w='100%' h='auto'>
+    <Grid  gridTemplateColumns={["_ 1fr",'_ 1fr','450px 1fr']}>
+            <GridItem w='100%' h='auto' display={['none','none','block']}>
             <Image
                 src='https://cdn.dribbble.com/users/1450874/screenshots/14971476/media/2d8e80c538d9138984673ea5fb6d5e8d.jpg?compress=1&resize=768x576&vertical=top'
                 alt='Sign Up'
@@ -26,7 +26,6 @@ const SignUp = () =>
             <SignupIcons />
             <Text fontSize='lg' textAlign={'center'} mt='10px' color='gray'>or use your email for registration</Text>
             <SignupInputs />
-            <Button colorScheme='blue' mt="50px" ml="390px">Create Account</Button>
             </GridItem>
     </Grid>
   </Box>
