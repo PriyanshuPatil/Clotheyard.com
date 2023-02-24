@@ -4,7 +4,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./HomePage.css";
 import img_animation from "../../Assets/ONENESS-DESKTOP-ANIMATION.gif";
-import profile_img from "../../Assets/DESKTOP@2x.jpg";
+import Mid1 from "../../Assets/mid1.jpg";
+import Mid2 from "../../Assets/mid2.jpg";
 import con2_img from "../../Assets/shortgirl.jpg";
 import love_img from "../../Assets/aerofashionlovebag.png";
 import guys_img from "../../Assets/guysshort.jpg";
@@ -120,7 +121,7 @@ const HomePage = () => {
 
         <Flex
           alignItems={"center"}
-          border={"1px solid black"}
+          border={"px solid black"}
           display={{
             base: "block",
             md: "block",
@@ -242,29 +243,81 @@ const HomePage = () => {
           </Box>
         </Flex>
 
-        <Box
+        <Flex
           mt="20px"
+          m="auto"
+          w="95%"
+          py='1rem'
+          display={{
+            base: "block",
+            md: "block",
+            lg: "flex",
+          }}
+          rowGap="1rem"
+          columnGap={"1rem"}
           cursor={"pointer"}
-          border={"2px solid grey"}
+          alignItems="center"
           className="__home__wrap__profile__"
         >
-          <img src={profile_img} alt="profile_img" />
-        </Box>
+          <Image
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "50%",
+            }}
+            marginBottom="1rem"
+            src={Mid1}
+          />
+          <Image
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "50%",
+            }}
+            src={Mid2}
+          />
+          {/* <img src={profile_img} alt="profile_img" /> */}
+        </Flex>
 
         <Box className="HomeContainerAmbassadorSection">
           <div>
             <p>POV:Aero Pride Ambassador</p>
-            {/* {texts[index].item} */}
           </div>
           <Link className="__container__1__learnmore__">Learn More</Link>
         </Box>
 
-        <Box border={"2px solid grey"} className="__home__container__2__">
-          <div className="_home__section_1__">
-            <img src={con2_img} alt="short_img" />
-          </div>
+        <Flex
+          justifyContent={"space-between"}
+          display={{
+            base: "block",
+            md: "block",
+            lg: "flex",
+          }}
+          columnGap="0.5rem"
+          alignItems="center"
+          // className="__home__container__2__"
+        >
+          <Box
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "25%",
+            }}
+            border="2px solid yellow"
+            className="_home__section_1__"
+          >
+            <Image src={con2_img} alt="short_img" />
+          </Box>
 
-          <div className="_home__section_2__">
+          <Box
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "30%",
+            }}
+            border="2px solid red"
+            className="_home__section_2__"
+          >
             <div className="_home__textwrap_">
               <p>
                 <strong>
@@ -283,9 +336,17 @@ const HomePage = () => {
               </p>
               <Link>Girl Shots</Link>
             </div>
-          </div>
+          </Box>
 
-          <div className="__home__product__carousel">
+          <Box
+            w={{
+              base: "100%",
+              md: "100%",
+              lg: "45%",
+            }}
+            overflow="hidden"
+            textAlign={"center"}
+          >
             <Carousel
               responsive={responsive}
               autoPlay={true}
@@ -338,8 +399,8 @@ const HomePage = () => {
                 <p>Midi</p>
               </div>
             </Carousel>
-          </div>
-        </Box>
+          </Box>
+        </Flex>
 
         <div className="__home__container__3__">
           <div className="__home__img__wrapper__">

@@ -110,25 +110,11 @@
 
 /* __home__container__2__ */
 
-.__home__container__2__ {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-._home__section_1__ {
-  width: 25%;
-}
-
-._home__section_2__guys {
-  width: 27.5%;
-}
 
 ._home__section_2__ {
   background-image: url("../../Assets/shortsdesktop.jpg");
   text-align: center;
-  width: 30%;
+  /* width: 30%; */
   height: 35.5vw;
   background-size: contain;
   background-repeat: no-repeat;
@@ -188,15 +174,6 @@
 ._home__textwrap_ > p + p + p + a:hover {
   background-color: #1e3352;
   color: white;
-}
-
-.__home__product__carousel {
-  overflow: hidden;
-  width: 40%;
-}
-
-.__home__product__carousel > div {
-  text-align: center;
 }
 
 .react-multiple-carousel__arrow {
