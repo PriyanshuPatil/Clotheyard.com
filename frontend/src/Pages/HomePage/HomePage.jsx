@@ -885,7 +885,7 @@ const HomePage = () => {
             </Box>
 
             {/* Tshit image */}
-            <Box m='auto' w={{ base: "98%", lg: "65%" }}>
+            <Box m="auto" w={{ base: "98%", lg: "65%" }}>
               <Image
                 w={"100%"}
                 borderRadius={"8px"}
@@ -895,128 +895,130 @@ const HomePage = () => {
             </Box>
           </Flex>
         </Flex>
+      </Box>
 
-        <div className="__home__container__5__">
-          <div className="__home__product__carousel">
-            <Carousel
-              responsive={responsive}
-              autoPlay={true}
-              infinite={true}
-              showDots={true}
-            >
-              <div>
-                <Link to="/women">
-                  <img
-                    src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw40b59aa7/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_CHEEKY-min.jpg"
-                    alt="product"
-                  />
-                </Link>
-                <p>Curvy New!</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dwfafadc45/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_ATHLETICSKINNY-min.jpg"
-                  alt="product"
-                />
-                <p>Vintage High Rise</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw678aa8b7/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_CURVY-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dwd384b11b/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SLIM-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw0bcce79d/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_SKINNY_JEGGING-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-            </Carousel>
-          </div>
-
-          <div className="_container_5_middle_data_">
-            <p>
-              <strong>
-                Aero
-                <br />
-                Jeans
-              </strong>
-            </p>
-            <p>
-              The easiest fits, the most
-              <br />
-              comfortable stretch. Complete
-              <br />
-              with special washes that make
-              <br />
-              them all your own.
-            </p>
+      {/* Two carousel Section */}
+      <div className="__home__container__5__">
+        <div className="__home__product__carousel">
+          <Carousel
+            responsive={responsive}
+            autoPlay={true}
+            infinite={true}
+            showDots={true}
+          >
             <div>
-              <Link>
-                Girls Jeans <strong>$ 17.87 & Up</strong>
+              <Link to="/women">
+                <img
+                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw40b59aa7/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_CHEEKY-min.jpg"
+                  alt="product"
+                />
               </Link>
-              <Link>
-                Gusy Jeans <strong>$ 17.87 & Up</strong>
-              </Link>
+              <p>Curvy New!</p>
             </div>
-          </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dwfafadc45/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_ATHLETICSKINNY-min.jpg"
+                alt="product"
+              />
+              <p>Vintage High Rise</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw678aa8b7/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_CURVY-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dwd384b11b/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SLIM-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw0bcce79d/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_SKINNY_JEGGING-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+          </Carousel>
+        </div>
 
-          <div className="__home__product__carousel">
-            <Carousel
-              responsive={responsive}
-              autoPlay={true}
-              infinite={true}
-              showDots={true}
-            >
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw9f81cac3/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_STRAIGHT-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw2af71b6e/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SKINNY-min.jpg"
-                  alt="product"
-                />
-                <p>Vintage High Rise</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw44a6b06b/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SUPERSKINNY-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dwd8c47c3c/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_CURVYSKINNY-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw47a1e310/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SLIMSTRAIGHT-min.jpg"
-                  alt="product"
-                />
-                <p>Curvy New!</p>
-              </div>
-            </Carousel>
+        <div className="_container_5_middle_data_">
+          <p>
+            <strong>
+              Aero
+              <br />
+              Jeans
+            </strong>
+          </p>
+          <p>
+            The easiest fits, the most
+            <br />
+            comfortable stretch. Complete
+            <br />
+            with special washes that make
+            <br />
+            them all your own.
+          </p>
+          <div>
+            <Link>
+              Girls Jeans <strong>$ 17.87 & Up</strong>
+            </Link>
+            <Link>
+              Gusy Jeans <strong>$ 17.87 & Up</strong>
+            </Link>
           </div>
         </div>
-      </Box>
+
+        <div className="__home__product__carousel">
+          <Carousel
+            responsive={responsive}
+            autoPlay={true}
+            infinite={true}
+            showDots={true}
+          >
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw9f81cac3/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_STRAIGHT-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw2af71b6e/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SKINNY-min.jpg"
+                alt="product"
+              />
+              <p>Vintage High Rise</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw44a6b06b/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SUPERSKINNY-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dwd8c47c3c/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GIRLS_CURVYSKINNY-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+            <div>
+              <img
+                src="https://www.aeropostale.com/on/demandware.static/-/Sites-aeropostale-Library/default/dw47a1e310/images/homepage/2020/011520/jeans/SPR20_FIT_GUIDE_DENIM_GUYS_SLIMSTRAIGHT-min.jpg"
+                alt="product"
+              />
+              <p>Curvy New!</p>
+            </div>
+          </Carousel>
+        </div>
+      </div>
+
       <div className="__home__container__6__">
         <img src={last_jeans} alt="jeans" />
         <div className="__home__recycle__">
