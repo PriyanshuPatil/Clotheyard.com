@@ -59,7 +59,7 @@ const Mens = () => {
         params: {
           type: filter,
           _page: page,
-          _limit: page && 10,
+          _limit: page && 20,
           _sort: sort,
           _order: order,
         },
@@ -72,7 +72,7 @@ const Mens = () => {
 
   useEffect(() => {
     Mensdatafetch();
-  }, [filter, page, sort, order]);
+  }, [filter, page, sort, order, target]);
 
   useEffect(() => {}, [mensData]);
 
@@ -85,7 +85,7 @@ const Mens = () => {
           <Box h={"4rem"}>
             <Flex justifyContent={"space-between"}>
               <Text fontWeight={"bold"} fontSize="28px">
-                Men
+                {target == "women" ? "Women" : "Men"}
               </Text>
               {CategoryObj.map((e, index) => {
                 return (
