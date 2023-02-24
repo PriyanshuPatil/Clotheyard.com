@@ -7,7 +7,9 @@ import axios from 'axios'
 export const CardItem = ({e}) => {
   const [quantity, setQuantity] = useState(1)
     const deletedata=(_id)=>{
-    axios.delete(`http://localhost:8080/cart${_id}`)
+
+    axios.delete(`http://localhost:8080/cart${e.id}`)
+
   }
   return (
     <>
