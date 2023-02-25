@@ -1,0 +1,71 @@
+.main {
+  color: red;
+}
+
+.AiOutlineShopping {
+  color: #005eb8;
+}
+
+.AiOutlineShopping:hover {
+  color: aliceblue;
+  transition: all 0.2s ease-in-out;
+}
+
+.CartSmallBox {
+  padding: 2px 0;
+}
+
+.MensProductsImage {
+  transition: all 0.5s ease-in-out;
+  /* overflow: hidden; */
+  overflow-y: hidden;
+}
+.MensProductsImage:hover {
+  transform: scale(1.08);
+  transition: 0.8s;
+}
+
+.flipcard {
+  background-color: transparent;
+  width: 100%;
+  height: 320px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flipcardinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipcard:hover .flipcardinner {
+  transform: rotateY(180deg);
+}
+
+.flipcardfront,
+.flipcardback {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flipcardback {
+  transform: rotateY(180deg);
+}

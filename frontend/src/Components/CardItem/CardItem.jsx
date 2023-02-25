@@ -7,12 +7,14 @@ import "../../Pages/Cart/cart.css"
 import { Radio, RadioGroup } from '@chakra-ui/react'
 
 export const CardItem = ({e}) => {
+
   // const[sum,setSum]=useState([])
  const [quantity, setQuantity] = useState(1)
   const [value, setValue] = React.useState('1')
   const deletedata=(id)=>{
     axios.delete(`https://dizzy-tuna-twill.cyclic.app/cart/${id}`)
     window.location.reload()
+
   }
   return (
     <>
