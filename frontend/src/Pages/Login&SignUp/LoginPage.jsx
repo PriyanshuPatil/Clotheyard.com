@@ -1,14 +1,11 @@
-import { Login } from "../../Components/Login&SignUp/Login"
-import Navbar from "../../Components/Navbar/Navbar"
+import { Login } from "../../Components/Login&SignUp/Login";
 
+const LoginPage = () => {
+  return (
+    <div>
+      <Login />
+    </div>
+  );
+};
 
-
-const LoginPage  =()=>{
-    return(
-        <div>
-            <Login />
-        </div>
-    )
-}
-
-export default LoginPage
+export default LoginPage;
