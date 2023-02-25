@@ -55,8 +55,9 @@ const ProductsPage = () => {
 
   const ProductsPagedatafetch = async () => {
     try {
-      let data = await axios(`http://localhost:8080/${target}`, {
+      let data = await axios(`https://dizzy-tuna-twill.cyclic.app/product`, {
         params: {
+          _category: target,
           type: filter,
           _page: page,
           _limit: page && 20,
