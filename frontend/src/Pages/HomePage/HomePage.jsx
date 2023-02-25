@@ -897,9 +897,23 @@ const HomePage = () => {
         </Flex>
       </Box>
 
-      {/* Two carousel Section */}
-      <Box border={"2px solid black"} className="__home__container__5__">
-        {/* Right carousel */}
+      {/* =============  Two carousel Section  ===================*/}
+      <Flex
+        display={{
+          base: "block",
+          md: "block",
+          lg: "flex",
+        }}
+        mt={{
+          base: "block",
+          md: "block",
+          lg: "20px",
+        }}
+        alignItems="center"
+        justifyContent="space-between"
+        border={"2px solid grey"}
+      >
+        {/* Left carousel */}
         <Box
           w={{
             base: "100%",
@@ -955,14 +969,29 @@ const HomePage = () => {
           </Carousel>
         </Box>
 
-        <Box className="_container_5_middle_data_">
-          <p>
+        <Box
+          textAlign={"center"}
+          w={{
+            base: "100%",
+            md: "100%",
+            lg: "35%",
+          }}
+          justifyContent="center"
+          height={"fit-content"}
+          className="_container_5_middle_data_"
+        >
+          <Text
+            fontSize={"2rem"}
+            fontWeight="bold"
+            color={"#02afcf"}
+            lineHeight="2rem"
+          >
             <strong>
               Aero
               <br />
               Jeans
             </strong>
-          </p>
+          </Text>
           <p>
             The easiest fits, the most
             <br />
@@ -973,12 +1002,48 @@ const HomePage = () => {
             them all your own.
           </p>
           <Box>
-            <Link>
-              Girls Jeans <strong>$ 17.87 & Up</strong>
-            </Link>
-            <Link>
-              Gusy Jeans <strong>$ 17.87 & Up</strong>
-            </Link>
+            <Button
+              mt="1rem"
+              w={{
+                base: "15rem",
+                md: "15rem",
+                lg: "90%",
+              }}
+              h={"3rem"}
+              variant="solid"
+              color="#02afcf"
+              bg="white"
+              size="xs"
+              border={"2px solid #02afcf"}
+              fontSize={"18px"}
+              _hover={{
+                backgroundColor: "#02afcf",
+                color: "white",
+              }}
+            >
+              Girls Jeans <strong> $ 17.87 & Up</strong>
+            </Button>
+            <Button
+              mt="1rem"
+              w={{
+                base: "15rem",
+                md: "15rem",
+                lg: "90%",
+              }}
+              h={"3rem"}
+              variant="solid"
+              color="#02afcf"
+              bg="white"
+              size="xs"
+              border={"2px solid #02afcf"}
+              fontSize={"18px"}
+              _hover={{
+                backgroundColor: "#02afcf",
+                color: "white",
+              }}
+            >
+              Guys Jeans <strong> $ 17.87 & Up</strong>
+            </Button>
           </Box>
         </Box>
 
@@ -1035,7 +1100,7 @@ const HomePage = () => {
             </Box>
           </Carousel>
         </Box>
-      </Box>
+      </Flex>
 
       <Box className="__home__container__6__">
         <img src={last_jeans} alt="jeans" />
