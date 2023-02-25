@@ -38,8 +38,20 @@ const HomePage = () => {
   };
 
   return (
-    <Box m="auto" w="98%" className="HomeContainer">
-      <Box className="HomeGoodThingsSection">
+    <Box m="auto" w="100%" className="HomeContainer">
+      {/* Good things section */}
+      <Flex
+        lineHeight={{
+          base: "0.9rem",
+          lg: "1.2rem",
+        }}
+        display={{
+          base: "block",
+          md: "block",
+          lg: "flex",
+        }}
+        className="HomeGoodThingsSection"
+      >
         <Box
           width={{
             base: "100%",
@@ -47,7 +59,7 @@ const HomePage = () => {
             lg: "70%",
           }}
           fontSize={{
-            base: "10px",
+            base: "9px",
             md: "11px",
             lg: "12px",
           }}
@@ -60,18 +72,27 @@ const HomePage = () => {
             }}
           >
             Good Things Take Time.
-          </Text>{" "}
+          </Text>
           Over the last few weeks, we've implemented extra precautionary
           measures in our warehouse to ensure the health and safety of our
           customers and associates. Because of this your shipment may experience
           delays. Thank you for your patience and understanding.
         </Box>
-        <Box>Learn More & Stay Safe</Box>
-      </Box>
+        <Text
+          fontSize={{
+            base: "10px",
+            md: "12px",
+            lg: "15px",
+          }}
+          textDecoration={"underline"}
+        >
+          Learn More & Stay Safe
+        </Text>
+      </Flex>
 
       {/* main body  */}
 
-      <Box w={"100%"} m="auto" py={"10px"}>
+      <Box w={"98%"} m="auto" py={"10px"}>
         <Box m="auto" w={"100%"} className="HomeBannerSection">
           <Box>
             <Image src={img_animation} alt="animation img" />
@@ -114,6 +135,7 @@ const HomePage = () => {
           </Flex>
         </Box>
 
+        {/* 50-70% Off Everything! section */}
         <Flex
           alignItems={"center"}
           display={{
@@ -122,9 +144,13 @@ const HomePage = () => {
             lg: "flex",
           }}
           mt="20px"
-          className="__home__profit__banner__"
         >
-          <Box>
+          <Box
+            mt={{
+              base: "-1.5rem",
+              lg: "0",
+            }}
+          >
             <Text
               py="1rem"
               fontSize={{
@@ -168,6 +194,10 @@ const HomePage = () => {
             justifyContent={"center"}
           >
             <Grid
+              mt={{
+                base: "1rem",
+                lg: "0",
+              }}
               gap={"1rem"}
               justifyContent={"center"}
               templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
@@ -239,7 +269,7 @@ const HomePage = () => {
         <Flex
           mt="20px"
           m="auto"
-          w="100%"
+          w="99%"
           py="1rem"
           display={{
             base: "block",
@@ -270,12 +300,51 @@ const HomePage = () => {
           />
         </Flex>
 
-        <Box className="HomeContainerAmbassadorSection">
-          <Box>
-            <p>POV:Aero Pride Ambassador</p>
+        <Flex
+          h={{
+            base: "8rem",
+            lg: "5rem",
+          }}
+          mb={{ base: "1rem",lg:'0' }}
+          display={{
+            base: "block",
+            lg: "flex",
+          }}
+          textAlign={{ base: "center" }}
+          justifyContent={{ base: "center", lg: "space-between" }}
+          bg="#ee5e68"
+          px="1rem"
+          color={"white"}
+          alignItems={"center"}
+          borderRadius="10px"
+          className="HomeContainerAmbassadorSection"
+        >
+          <Box py={{ base: "1rem" }}>
+            <Text fontSize={{ base: "1rem", lg: "1.5rem" }}>
+              POV:Aero Pride Ambassador
+            </Text>
           </Box>
-          <Link className="__container__1__learnmore__">Learn More</Link>
-        </Box>
+
+          <Button
+            w={{
+              base: "15rem",
+              md: "15rem",
+              lg: "15rem",
+            }}
+            h={"3rem"}
+            variant="outline"
+            color="white"
+            border={"2px solid white"}
+            size="xs"
+            fontSize={"18px"}
+            _hover={{
+              backgroundColor: "#fff",
+              color: "black",
+            }}
+          >
+            Learn More
+          </Button>
+        </Flex>
 
         {/* First section Girls Shorts with carousel */}
         <Flex
@@ -897,9 +966,22 @@ const HomePage = () => {
         </Flex>
       </Box>
 
-      {/* Two carousel Section */}
-      <Box border={"2px solid black"} className="__home__container__5__">
-        {/* Right carousel */}
+      {/* =============  Two carousel Section  ===================*/}
+      <Flex
+        display={{
+          base: "block",
+          md: "block",
+          lg: "flex",
+        }}
+        mt={{
+          base: "block",
+          md: "block",
+          lg: "20px",
+        }}
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        {/* Left carousel */}
         <Box
           w={{
             base: "100%",
@@ -955,15 +1037,35 @@ const HomePage = () => {
           </Carousel>
         </Box>
 
-        <Box className="_container_5_middle_data_">
-          <p>
+        <Box
+          textAlign={"center"}
+          w={{
+            base: "100%",
+            md: "100%",
+            lg: "35%",
+          }}
+          justifyContent="center"
+          height={"fit-content"}
+          className="_container_5_middle_data_"
+        >
+          <Text
+            fontSize={"2rem"}
+            fontWeight="bold"
+            color={"#02afcf"}
+            lineHeight="2.5rem"
+          >
             <strong>
               Aero
               <br />
               Jeans
             </strong>
-          </p>
-          <p>
+          </Text>
+          <Text
+            color={"#02afcf"}
+            textAlign="center"
+            lineHeight={"1.6rem"}
+            fontSize={{ base: "1.2rem", md: "1.5rem", lg: "1.5rem" }}
+          >
             The easiest fits, the most
             <br />
             comfortable stretch. Complete
@@ -971,14 +1073,50 @@ const HomePage = () => {
             with special washes that make
             <br />
             them all your own.
-          </p>
+          </Text>
           <Box>
-            <Link>
-              Girls Jeans <strong>$ 17.87 & Up</strong>
-            </Link>
-            <Link>
-              Gusy Jeans <strong>$ 17.87 & Up</strong>
-            </Link>
+            <Button
+              mt="1rem"
+              w={{
+                base: "15rem",
+                md: "15rem",
+                lg: "90%",
+              }}
+              h={"3rem"}
+              variant="solid"
+              color="#02afcf"
+              bg="white"
+              size="xs"
+              border={"2px solid #02afcf"}
+              fontSize={"18px"}
+              _hover={{
+                backgroundColor: "#02afcf",
+                color: "white",
+              }}
+            >
+              Girls Jeans <strong> $ 17.87 & Up</strong>
+            </Button>
+            <Button
+              mt="1rem"
+              w={{
+                base: "15rem",
+                md: "15rem",
+                lg: "90%",
+              }}
+              h={"3rem"}
+              variant="solid"
+              color="#02afcf"
+              bg="white"
+              size="xs"
+              border={"2px solid #02afcf"}
+              fontSize={"18px"}
+              _hover={{
+                backgroundColor: "#02afcf",
+                color: "white",
+              }}
+            >
+              Guys Jeans <strong> $ 17.87 & Up</strong>
+            </Button>
           </Box>
         </Box>
 
@@ -1035,18 +1173,43 @@ const HomePage = () => {
             </Box>
           </Carousel>
         </Box>
-      </Box>
+      </Flex>
 
-      <Box className="__home__container__6__">
+      {/* ===== Last section */}
+      <Box
+        mt={{
+          base: "1.2rem",
+          lg: "2rem",
+        }}
+      >
         <img src={last_jeans} alt="jeans" />
-        <Box className="__home__recycle__">
+        <Box
+          py={{ base: "0.5rem", lg: "1rem" }}
+          position={"absolute"}
+          bottom={{
+            base: "0rem",
+            lg: "20rem",
+          }}
+          right={{ base: "30px", lg: "120px" }}
+        >
           <Box>
-            <img src={recyle} alt="recyle" />
+            <Image
+              w={{ base: "20px", lg: "50px" }}
+              m={"0 auto"}
+              mb="1.5rem"
+              src={recyle}
+              alt="recyle"
+            />
           </Box>
-          <p>
+          <Text
+            fontWeight={"bold"}
+            fontSize={{ base: "0.8rem", lg: "1.5rem" }}
+            color="white"
+            textAlign={"center"}
+          >
             At Aero, we're committed to a better, brighter future. <br />
             do better, look better, feel better... it's in our jeans.
-          </p>
+          </Text>
         </Box>
       </Box>
     </Box>
