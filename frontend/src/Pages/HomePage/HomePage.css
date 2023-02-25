@@ -1,5 +1,4 @@
 .HomeGoodThingsSection {
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
@@ -7,15 +6,6 @@
   background: #1e3352;
   color: #809aaa;
   padding: 5px 0px;
-  line-height: 19px;
-}
-
-.HomeGoodThingsSection > div > span {
-  font-weight: bold;
-}
-
-.HomeGoodThingsSection > div:last-child {
-  text-decoration: underline;
 }
 
 /* Body section */
@@ -34,25 +24,6 @@
   margin: 0 auto;
 }
 
-/* // HomeContainerAmbassadorSection  */
-
-.HomeContainerAmbassadorSection {
-  background-color: #ee5e68;
-  color: white;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1vw;
-  border-radius: 0.8vw;
-  margin-top: 20px;
-}
-
-.HomeContainerAmbassadorSection > div:first-child > p:first-child {
-  font-size: 1.7vw;
-  font-weight: 600;
-  text-decoration: underline;
-}
 
 .fade-text {
   animation: fadeInOut 5s ease-in-out infinite;

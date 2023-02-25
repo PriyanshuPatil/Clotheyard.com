@@ -39,7 +39,19 @@ const HomePage = () => {
 
   return (
     <Box m="auto" w="100%" className="HomeContainer">
-      <Box className="HomeGoodThingsSection">
+      {/* Good things section */}
+      <Flex
+        lineHeight={{
+          base: "0.9rem",
+          lg: "1.2rem",
+        }}
+        display={{
+          base: "block",
+          md: "block",
+          lg: "flex",
+        }}
+        className="HomeGoodThingsSection"
+      >
         <Box
           width={{
             base: "100%",
@@ -47,7 +59,7 @@ const HomePage = () => {
             lg: "70%",
           }}
           fontSize={{
-            base: "10px",
+            base: "9px",
             md: "11px",
             lg: "12px",
           }}
@@ -60,14 +72,23 @@ const HomePage = () => {
             }}
           >
             Good Things Take Time.
-          </Text>{" "}
+          </Text>
           Over the last few weeks, we've implemented extra precautionary
           measures in our warehouse to ensure the health and safety of our
           customers and associates. Because of this your shipment may experience
           delays. Thank you for your patience and understanding.
         </Box>
-        <Box>Learn More & Stay Safe</Box>
-      </Box>
+        <Text
+          fontSize={{
+            base: "10px",
+            md: "12px",
+            lg: "15px",
+          }}
+          textDecoration={"underline"}
+        >
+          Learn More & Stay Safe
+        </Text>
+      </Flex>
 
       {/* main body  */}
 
@@ -114,6 +135,7 @@ const HomePage = () => {
           </Flex>
         </Box>
 
+        {/* 50-70% Off Everything! section */}
         <Flex
           alignItems={"center"}
           display={{
@@ -122,9 +144,13 @@ const HomePage = () => {
             lg: "flex",
           }}
           mt="20px"
-          className="__home__profit__banner__"
         >
-          <Box>
+          <Box
+            mt={{
+              base: "-1.5rem",
+              lg: "0",
+            }}
+          >
             <Text
               py="1rem"
               fontSize={{
@@ -168,6 +194,10 @@ const HomePage = () => {
             justifyContent={"center"}
           >
             <Grid
+              mt={{
+                base: "1rem",
+                lg: "0",
+              }}
               gap={"1rem"}
               justifyContent={"center"}
               templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
@@ -270,12 +300,51 @@ const HomePage = () => {
           />
         </Flex>
 
-        <Box className="HomeContainerAmbassadorSection">
-          <Box>
-            <p>POV:Aero Pride Ambassador</p>
+        <Flex
+          h={{
+            base: "8rem",
+            lg: "5rem",
+          }}
+          mb={{ base: "1rem",lg:'0' }}
+          display={{
+            base: "block",
+            lg: "flex",
+          }}
+          textAlign={{ base: "center" }}
+          justifyContent={{ base: "center", lg: "space-between" }}
+          bg="#ee5e68"
+          px="1rem"
+          color={"white"}
+          alignItems={"center"}
+          borderRadius="10px"
+          className="HomeContainerAmbassadorSection"
+        >
+          <Box py={{ base: "1rem" }}>
+            <Text fontSize={{ base: "1rem", lg: "1.5rem" }}>
+              POV:Aero Pride Ambassador
+            </Text>
           </Box>
-          <Link className="__container__1__learnmore__">Learn More</Link>
-        </Box>
+
+          <Button
+            w={{
+              base: "15rem",
+              md: "15rem",
+              lg: "15rem",
+            }}
+            h={"3rem"}
+            variant="outline"
+            color="white"
+            border={"2px solid white"}
+            size="xs"
+            fontSize={"18px"}
+            _hover={{
+              backgroundColor: "#fff",
+              color: "black",
+            }}
+          >
+            Learn More
+          </Button>
+        </Flex>
 
         {/* First section Girls Shorts with carousel */}
         <Flex
