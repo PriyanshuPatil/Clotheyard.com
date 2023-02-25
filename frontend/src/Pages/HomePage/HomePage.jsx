@@ -38,7 +38,7 @@ const HomePage = () => {
   };
 
   return (
-    <Box m="auto" w="98%" className="HomeContainer">
+    <Box m="auto" w="100%" className="HomeContainer">
       <Box className="HomeGoodThingsSection">
         <Box
           width={{
@@ -71,7 +71,7 @@ const HomePage = () => {
 
       {/* main body  */}
 
-      <Box w={"100%"} m="auto" py={"10px"}>
+      <Box w={"98%"} m="auto" py={"10px"}>
         <Box m="auto" w={"100%"} className="HomeBannerSection">
           <Box>
             <Image src={img_animation} alt="animation img" />
@@ -239,7 +239,7 @@ const HomePage = () => {
         <Flex
           mt="20px"
           m="auto"
-          w="100%"
+          w="99%"
           py="1rem"
           display={{
             base: "block",
@@ -911,7 +911,6 @@ const HomePage = () => {
         }}
         alignItems="center"
         justifyContent="space-between"
-        border={"2px solid grey"}
       >
         {/* Left carousel */}
         <Box
@@ -984,7 +983,7 @@ const HomePage = () => {
             fontSize={"2rem"}
             fontWeight="bold"
             color={"#02afcf"}
-            lineHeight="2rem"
+            lineHeight="2.5rem"
           >
             <strong>
               Aero
@@ -992,7 +991,12 @@ const HomePage = () => {
               Jeans
             </strong>
           </Text>
-          <p>
+          <Text
+            color={"#02afcf"}
+            textAlign="center"
+            lineHeight={"1.6rem"}
+            fontSize={{ base: "1.2rem", md: "1.5rem", lg: "1.5rem" }}
+          >
             The easiest fits, the most
             <br />
             comfortable stretch. Complete
@@ -1000,7 +1004,7 @@ const HomePage = () => {
             with special washes that make
             <br />
             them all your own.
-          </p>
+          </Text>
           <Box>
             <Button
               mt="1rem"
@@ -1102,16 +1106,41 @@ const HomePage = () => {
         </Box>
       </Flex>
 
-      <Box className="__home__container__6__">
+      {/* ===== Last section */}
+      <Box
+        mt={{
+          base: "1.2rem",
+          lg: "2rem",
+        }}
+      >
         <img src={last_jeans} alt="jeans" />
-        <Box className="__home__recycle__">
+        <Box
+          py={{ base: "0.5rem", lg: "1rem" }}
+          position={"absolute"}
+          bottom={{
+            base: "0rem",
+            lg: "20rem",
+          }}
+          right={{ base: "30px", lg: "120px" }}
+        >
           <Box>
-            <img src={recyle} alt="recyle" />
+            <Image
+              w={{ base: "20px", lg: "50px" }}
+              m={"0 auto"}
+              mb="1.5rem"
+              src={recyle}
+              alt="recyle"
+            />
           </Box>
-          <p>
+          <Text
+            fontWeight={"bold"}
+            fontSize={{ base: "0.8rem", lg: "1.5rem" }}
+            color="white"
+            textAlign={"center"}
+          >
             At Aero, we're committed to a better, brighter future. <br />
             do better, look better, feel better... it's in our jeans.
-          </p>
+          </Text>
         </Box>
       </Box>
     </Box>
