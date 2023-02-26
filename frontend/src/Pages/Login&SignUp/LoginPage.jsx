@@ -1,12 +1,11 @@
+import { Login } from "../../Components/Login&SignUp/Login";
 
+const LoginPage = () => {
+  return (
+    <div>
+      <Login />
+    </div>
+  );
+};
 
-
-const LoginPage  =()=>{
-    return(
-        <div>
-            LOGIN PAGE
-        </div>
-    )
-}
-
-export default LoginPage
+export default LoginPage;

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import {Box, Button, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react'
 import axios from 'axios'
+
 import { useToast } from '@chakra-ui/react'
+
 const data={
   id:1,
     category: "Child",
@@ -72,8 +74,8 @@ export const Singlepage = () => {
        }) 
         .then(e=>console.log(e))
        .catch(e=>console.log(e))
- 
-    
+
+
     }
   return (<Box w='80%' margin={'auto'}>
 
@@ -81,10 +83,12 @@ export const Singlepage = () => {
 
       <Box w='70%' >
           <SimpleGrid gap='10px' columns={{lg:2,md:2,sm:1}}>
+
 <img width={'100%'}  src={single.images[0]} alt="imagesd" />
 <img width={'100%'}  src={single.images[1]} alt="imagesd" />
 <img width={'100%'}  src={single.images[2]} alt="imagesd" />
 <img width={'100%'}  src={single.images[3]} alt="imagesd" />
+
         </SimpleGrid>
       </Box>
       <Box w='30%' paddingTop='30px' paddingLeft={'30px'} >
@@ -93,7 +97,11 @@ export const Singlepage = () => {
 
       <Heading size={'md'}>{single.subtitle}</Heading>
       <Heading size={'md'}marginTop='30px'>{single.strike_price}</Heading>
+
+      {/* <Text size={'md'}>{single.discount}</Text> */}
+
       <Box marginTop='30px'>
+
       <Text size={'sl'}>Size:Select Size</Text>
         <Flex gap='10px'>
         <button onClick={()=>setsize("XS")} style={{border:size=="XS"?"solid 2px #0e0b0c":"", width:'30px' ,borderRadius:'50%' ,backgroundColor:"#f2f2f2" }}>XS</button>

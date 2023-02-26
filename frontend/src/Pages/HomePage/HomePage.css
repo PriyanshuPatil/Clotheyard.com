@@ -1,0 +1,142 @@
+.HomeGoodThingsSection {
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 15px;
+  background: #1e3352;
+  color: #809aaa;
+  padding: 5px 0px;
+}
+
+/* Body section */
+.HomeBannerSection {
+  background-image: url("../../Assets/banner.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 11vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HomeBannerSection > div:first-child > img {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+}
+
+
+.fade-text {
+  animation: fadeInOut 5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.HomeContainerAmbassadorSection > div:first-child > p:first-child + p {
+  font-size: 1.4em;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.__container__1__learnmore__ {
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 3vw;
+  letter-spacing: normal;
+  text-align: center;
+  transition: 0.3s ease-in-out all;
+  width: 18vw;
+  font-size: 1.7vw;
+  border-width: 4px;
+  border: solid 2px white;
+  border-radius: 0.3vw;
+  background-color: #ee5e68;
+  color: white;
+  margin: 0.3vw;
+  padding-top: 0.2vw;
+}
+
+.__container__1__learnmore__:hover {
+  border: 2px solid black;
+  color: black;
+  background: white;
+}
+
+.HomeSectionSecondCenter {
+  text-align: center;
+  background: rgb(149, 99, 152);
+  border-radius: 10px;
+  background: linear-gradient(
+    283deg,
+    rgba(149, 99, 152, 1) 0%,
+    rgba(60, 148, 196, 1) 35%,
+    rgba(5, 151, 198, 1) 100%
+  );
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-multiple-carousel__arrow {
+  display: none;
+}
+
+.react-multi-carousel-dot-list {
+  top: 430px;
+}
+
+.HomeNiceToSeeYouSection {
+  background: rgb(118, 82, 156);
+  background: linear-gradient(
+    138deg,
+    rgba(118, 82, 156, 1) 0%,
+    rgba(45, 167, 191, 1) 35%,
+    rgba(242, 137, 97, 1) 100%
+  );
+  border-radius: 10px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 3.5vw;
+  margin-top: 1rem;
+  margin-bottom: 1vw;
+}
+
+.NicetoSeeYouImage {
+  margin: 0 auto;
+  width: 5%;
+  position: relative;
+  top: 1vw;
+}
+
+.HomeContainerTeesTankSection {
+  background: rgb(118, 82, 156);
+  background: linear-gradient(
+    138deg,
+    rgba(118, 82, 156, 1) 0%,
+    rgba(45, 167, 191, 1) 35%,
+    rgba(242, 137, 97, 1) 100%
+  );
+  height: fit-content;
+  padding: 1rem 0;
+  border: 2px solid palevioletred;
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
