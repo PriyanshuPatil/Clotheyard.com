@@ -1,5 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { Dashboard } from "../Pages/Admin/Dashboard";
+import { Orders } from "../Pages/Admin/Orders";
+import { Products } from "../Pages/Admin/Products";
+import { Users } from "../Pages/Admin/Users";
 import { Cart } from "../Pages/Cart/cart";
 import DemoPage from "../Pages/DemoPage/DemoPage";
 import HomePage from "../Pages/HomePage/HomePage";
@@ -16,6 +20,10 @@ const AllRoutes = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/single/:_id" element={<Singlepage />} />
       <Route path="/products/:target" element={<Mens />} />
+      <Route path="/admin/orders" element={<Orders />} />
+      <Route path="/admin/dashboard" element={<Dashboard />} />
+      <Route path="/admin/products" element={<Products />} />
+      <Route path="/admin/users" element={<Users />} />
     </Routes>
   );
 };
