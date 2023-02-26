@@ -2,7 +2,7 @@ import * as types from "./Product.types";
 
 const initState = {
   products: [],
-  singleProduct: {},
+  singleProduct: undefined,
   loading: false,
   error: false,
 };
