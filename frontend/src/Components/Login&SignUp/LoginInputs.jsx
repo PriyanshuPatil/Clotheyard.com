@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { login, logout } from "../../Redux/AuthReducer/auth.actions";
 
 const LoginInputs = () => {
@@ -25,6 +26,7 @@ const LoginInputs = () => {
   const toast = useToast();
   const dispatch = useDispatch();
   const handleClick = () => setShow(!show);
+  const navigate=useNavigate()
   const handleLogin = async () => {
     await dispatch(logout());
 
@@ -39,6 +41,7 @@ const LoginInputs = () => {
             duration: 4000,
             isClosable: true,
           });
+          navigate("/")
         } else {
           toast({
             title: "Oops!",

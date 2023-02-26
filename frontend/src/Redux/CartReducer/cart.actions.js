@@ -75,7 +75,6 @@ export const clearCart =
       })
       .then((res) => {
         dispatch({ type: types.DELETE_CART_SUCCESS });
-        navigate("/");
       })
       .catch((err) => dispatch({ type: types.DELETE_CART_ERROR }));
   };

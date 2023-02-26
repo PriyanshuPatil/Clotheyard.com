@@ -57,7 +57,7 @@ export const Cart = () => {
   };
 
   const clearCartItems = () => {
-    dispatch(clearCart({ token, navigate }));
+    dispatch(clearCart({ token }));
   };
 
   const handlePlaceOrder = () => {
@@ -72,6 +72,7 @@ export const Cart = () => {
       products: arr,
     };
     dispatch(addOrders({ token, payload, clearCartItems }));
+    navigate("/address")
   };
   useEffect(() => {
     getData();

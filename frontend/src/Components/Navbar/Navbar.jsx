@@ -208,6 +208,26 @@ const DesktopNav = () => {
           </NaviLink>
         </Box>
       ))}
+       <Box >
+          <NaviLink to={"/admin/dashboard"}>
+            <Box
+              py={1}
+              fontSize={"lg"}
+              fontWeight={400}
+              color={linkColor}
+              borderBottom="2px solid white"
+              _hover={{
+                // transitionDelay: "200ms",
+                textDecoration: "none",
+                borderBottom: "2px solid black",
+
+                color: linkHoverColor,
+              }}
+            >
+              Admin
+            </Box>
+          </NaviLink>
+        </Box>
     </Flex>
     // </Center>
   );

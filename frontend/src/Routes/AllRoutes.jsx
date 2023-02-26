@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Address from "../Pages/address/address";
 import { Dashboard } from "../Pages/Admin/Dashboard";
 import { Orders } from "../Pages/Admin/orders";
 import { Products } from "../Pages/Admin/Products";
@@ -10,6 +11,7 @@ import HomePage from "../Pages/HomePage/HomePage";
 import LoginPage from "../Pages/Login&SignUp/LoginPage";
 import SignUpPage from "../Pages/Login&SignUp/SignUpPage";
 import Mens from "../Pages/Mens/ProductsPage";
+import Payment from "../Pages/payment/payment";
 
 import { Singlepage } from "../Pages/SingleProductPage/singlepage";
 // import Women from "../Pages/Women/Women";
@@ -28,6 +30,8 @@ const AllRoutes = () => {
       <Route path="/admin/users" element={<Users />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<SignUpPage />} />
+      <Route path="/address" element={<Address/>} />
+      <Route path="/payment" element={<Payment/>} />
     </Routes>
   );
 };

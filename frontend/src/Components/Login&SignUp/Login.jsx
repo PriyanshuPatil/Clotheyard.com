@@ -69,7 +69,7 @@ const Login = () => {
           />
           <Text fontSize="md" textAlign={"center"} mt="-10">
             Don't have Account ?{" "}
-            <Link color="#3182CE" href="#">
+            <Link color="#3182CE" href="/register">
               Create Account
             </Link>
           </Text>
