@@ -12,14 +12,14 @@ import {
   MenuList,
   MenuItem,
   Heading,
-  Select,
-  Skeleton,
 } from "@chakra-ui/react";
 import { AiOutlineShopping } from "react-icons/ai";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import styles from "./ProductsPage.module.css";
 import LoadingSkeleton from "../Skeleton/Skeleton";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../Redux/ProductReducer/Product.actions";
 
 let CategoryObj = [
   {
@@ -46,38 +46,26 @@ let CategoryObj = [
 
 const ProductsPage = () => {
   const { target } = useParams();
-  const [ProductsPageData, setProductsPageData] = useState([]);
-  const [category, setCategory] = useState(target);
   const [filter, setFilter] = useState(undefined);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState();
   const [order, setOrder] = useState();
+  const dispatch = useDispatch();
+  const { products, error, loading } = useSelector(
+    (state) => state.ProductManager
+  );
 
   const ProductsPagedatafetch = async () => {
-    try {
-      let data = await axios(`https://dizzy-tuna-twill.cyclic.app/product`, {
-        params: {
-          _category: target,
-          type: filter,
-          _page: page,
-          _limit: page && 20,
-          _sort: sort,
-          _order: order,
-        },
-      });
-      return setProductsPageData(data.data);
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(getProducts({ category: target, page, sort, order }));
   };
 
   useEffect(() => {
     ProductsPagedatafetch();
   }, [filter, page, sort, order, target]);
 
-  useEffect(() => {}, [ProductsPageData]);
+  console.log(products);
 
-  if (ProductsPageData.length === 0) {
+  if (loading) {
     return <LoadingSkeleton />;
   } else
     return (
@@ -86,7 +74,7 @@ const ProductsPage = () => {
           <Box h={"4rem"}>
             <Flex justifyContent={"space-between"}>
               <Text fontWeight={"bold"} fontSize="28px">
-                {target == "women" ? "Women" : "Men"}
+                {target == "Womens" ? "Women" : "Men"}
               </Text>
               {CategoryObj.map((e, index) => {
                 return (
@@ -122,7 +110,7 @@ const ProductsPage = () => {
                       paddingTop={2}
                       style={{ color: "#828282" }}
                     >
-                      ({ProductsPageData.length}items)
+                      ({products.length}items)
                     </Heading>
                   </Box>
                 </Flex>
@@ -153,7 +141,7 @@ const ProductsPage = () => {
                         </MenuItem>
                         <MenuItem
                           onClick={() => {
-                            setSort("price");
+                            setSort("discounted_price");
                             setOrder("asc");
                           }}
                         >
@@ -161,7 +149,7 @@ const ProductsPage = () => {
                         </MenuItem>
                         <MenuItem
                           onClick={() => {
-                            setSort("price");
+                            setSort("discounted_price");
                             setOrder("desc");
                           }}
                         >
@@ -187,7 +175,7 @@ const ProductsPage = () => {
           w={"92%"}
           m="auto"
         >
-          {ProductsPageData?.map((item, i) => (
+          {products?.map((item, i) => (
             <Link key={i} to={`/singlepage/${item._id}`}>
               <Box
                 className="imagecontainer"
@@ -206,7 +194,7 @@ const ProductsPage = () => {
                         className={styles.ProductsPageProductsImage}
                         h="320px"
                         w={"100%"}
-                        src={item.imgUrl}
+                        src={item.images[0]}
                         alt="img"
                         mt="2"
                       />
@@ -216,7 +204,7 @@ const ProductsPage = () => {
                         className={styles.ProductsPageProductsImage}
                         h="320px"
                         w={"100%"}
-                        src={item.imgUrl2}
+                        src={item.images[3]}
                         alt="img"
                         mt="2"
                       />
@@ -242,12 +230,15 @@ const ProductsPage = () => {
                 </Box>
                 <Box>
                   <Box textAlign={"left"}>
+                    <Text fontSize={"17px"} fontWeight={"700"}>
+                      {item.title}
+                    </Text>
                     <Text fontSize={"15px"} fontWeight={"600"}>
-                      {item.name}
+                      {item.subtitle}
                     </Text>
                     <Box display={"flex"} justifyContent="flex-start" gap={2}>
                       <Text alignItems={"left"} fontSize={"15px"}>
-                        ${item.price}
+                        ${item.discounted_price}
                       </Text>
                     </Box>
                   </Box>

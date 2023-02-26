@@ -1,0 +1,9 @@
+.table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    display: block;
+  }
+td{
+    position: relative;
+}
+  

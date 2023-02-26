@@ -254,18 +254,18 @@ const MobileNavItem = ({ label, path }) => {
 const NAV_ITEMS = [
   {
     label: "Women",
-    path: "/products/women",
+    path: "/products/Womens",
   },
   {
     label: "Men",
-    path: "/products/men",
+    path: "/products/Mens",
   },
   {
     label: "Jeans",
-    path: "/products/jeans",
+    path: "/",
   },
   {
     label: "Clearance",
-    path: "/products/clearance",
+    path: "/",
   },
 ];
