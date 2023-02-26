@@ -261,11 +261,7 @@ const NAV_ITEMS = [
     path: "/products/Mens",
   },
   {
-    label: "Jeans",
-    path: "/",
-  },
-  {
-    label: "Clearance",
-    path: "/",
-  },
+    label: "Child",
+    path: "/products/Child",
+  }
 ];

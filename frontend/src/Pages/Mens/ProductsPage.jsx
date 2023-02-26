@@ -21,27 +21,46 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../Redux/ProductReducer/Product.actions";
 
-let CategoryObj = [
+
+const MensCat=[
   {
     id: 1,
-    name: "clothing",
+    name: "tshirt",
+    title:"Tshirt"
   },
   {
     id: 2,
-    name: "accessories",
+    name: "shirt",
+    title:"Shirt"
   },
   {
     id: 3,
-    name: "coat",
+    name: "pants",
+    title:"Pants"
   },
   {
     id: 4,
-    name: "shoes",
+    name: "jacket",
+    title:"Jacket"
+  }
+];
+
+let WonensObj = [
+  {
+    id: 1,
+    name: "kurta",
+    title:"Kurta"
   },
   {
-    id: 5,
-    name: "pajama_pants",
+    id: 2,
+    name: "kurta with dupatta",
+    title:"Kurta With Dupatta"
   },
+  {
+    id: 3,
+    name: "pants",
+    title:"Pants"
+  }
 ];
 
 const ProductsPage = () => {
@@ -54,9 +73,9 @@ const ProductsPage = () => {
   const { products, error, loading } = useSelector(
     (state) => state.ProductManager
   );
-
+const CategoryObj= target == "Womens" ? WonensObj : MensCat ;
   const ProductsPagedatafetch = async () => {
-    dispatch(getProducts({ category: target, page, sort, order }));
+    dispatch(getProducts({ category: target,type:filter, page, sort, order }));
   };
 
   useEffect(() => {
@@ -74,9 +93,11 @@ const ProductsPage = () => {
           <Box h={"4rem"}>
             <Flex justifyContent={"space-between"}>
               <Text fontWeight={"bold"} fontSize="28px">
-                {target == "Womens" ? "Women" : "Men"}
+                {target == "Womens" ? "Women" : target == "Mens" ?"Mens": "Child"}
               </Text>
-              {CategoryObj.map((e, index) => {
+              {
+
+              CategoryObj.map((e, index) => {
                 return (
                   <Button
                     key={index}
@@ -91,7 +112,7 @@ const ProductsPage = () => {
                       fontWeight="bold"
                       color={"gray.500"}
                     >
-                      {e.name}
+                      {e.title}
                     </Text>
                   </Button>
                 );

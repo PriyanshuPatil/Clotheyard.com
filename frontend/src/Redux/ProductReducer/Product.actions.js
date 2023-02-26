@@ -1,7 +1,7 @@
 import * as types from "./Product.types";
 import axios from "axios";
 export const getProducts =
-  ({ category, page, sort, order }) =>
+  ({ category, page, sort, order,type }) =>
   (dispatch) => {
     dispatch({ type: types.GET_PRODUCT_LOADING });
     axios
@@ -12,6 +12,7 @@ export const getProducts =
           _sort: sort,
           _order: order,
           _limit: 12,
+          type:type
         },
       })
       .then((res) => {
