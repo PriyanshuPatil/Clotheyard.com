@@ -1,21 +1,47 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { json, useParams } from "react-router-dom";
 import { Box, Button, Flex, Grid, Heading, HStack, Image, Select, SimpleGrid, Stack, StackDivider, Text } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import axios from 'axios'
 import "../../Pages/Cart/cart.css"
 import { Radio, RadioGroup } from '@chakra-ui/react'
+let subsum=0
+let arr=[0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+// console.log(arr)
+// console.log(subsum)
 
-export const CardItem = ({e}) => {
-
-  // const[sum,setSum]=useState([])
- const [quantity, setQuantity] = useState(1)
+const deletedata=(id)=>{
+  axios.delete(`https://vercel-deploy-jade-one.vercel.app/cart/${id}`)
+      window.location.reload()
+    }
+export const CardItem = ({e,i}) => {
+  // console.log(i)
+  const [quantity, setQuantity] = useState(1)
   const [value, setValue] = React.useState('1')
-  const deletedata=(id)=>{
-    axios.delete(`https://dizzy-tuna-twill.cyclic.app/cart/${id}`)
-    window.location.reload()
+  // useEffect(()=>{
+  //   arr[i]=(e.price*quantity)
+    
+  // })
+  localStorage.setItem("sum",JSON.stringify(arr))
+ 
 
+   const datas=[{
+    quantity:quantity,
+    index:i
+   }]
+  const setQuantitydata=(data)=>{
+
+    let sumvalue=data.target.value
+    setQuantity(sumvalue)
+    // aqq.push(sumvalue)
   }
+
+  // useEffect(()=>{
+
+  arr.map((eq)=>subsum+=eq)
+  console.log(arr)
+  console.log(subsum)
+
   return (
     <>
  <tr key={e._id} >
@@ -55,22 +81,20 @@ export const CardItem = ({e}) => {
           <Grid gap={'40px'}>
         
          
-          <Select onChange={(ee)=>setQuantity(ee.target.value)} name="" id="">
+          <Select onChange={(ee)=>setQuantitydata(ee)} name="" id="queti">
           <option  value="1">1</option>
             <option   value="2">2</option>
             <option   value="3">3</option>
             <option  value="4">4</option>
             <option  value="5">5</option>
         </Select>
-              <Button onClick={()=>deletedata(e.id)} variant='link' colorScheme='lightgrey'>
-                Remove
-              </Button>
+              <Button onClick={()=>deletedata(e.id)} variant='link' colorScheme='lightgrey'>   Remove </Button>
           </Grid>
+          {/* //localStorage.setItem("sum",JSON.stringify(datas)) */}
               </Stack></td>
-    
-              <td style={{padding:"40px"}}>{e.price} </td>
+              <td style={{padding:"40px"}}>{arr[i+1]=(e.price*quantity)} </td>
         </tr>
-
+ 
         </>
      )   
 }
