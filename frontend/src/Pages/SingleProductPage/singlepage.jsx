@@ -59,7 +59,8 @@ export const Singlepage = () => {
 
   const addToBag=(single)=>{
     console.log(single)
-  axios.post(`https://dizzy-tuna-twill.cyclic.app/cart`,{
+    //https://dizzy-tuna-twill.cyclic.app/cart
+  axios.post(`https://vercel-deploy-jade-one.vercel.app/cart`,{
          price:single.strike_price,
          images:single.images[0],
          subtitle:single.subtitle,
@@ -76,8 +77,6 @@ export const Singlepage = () => {
     }
   return (<Box w='80%' margin={'auto'}>
 
-
-    <Heading>Singlepage</Heading>
     <Flex columns={{lg:2,md:2,sm:1}}>
 
       <Box w='70%' >
@@ -91,13 +90,9 @@ export const Singlepage = () => {
       <Box w='30%' paddingTop='30px' paddingLeft={'30px'} >
         <Box position="sticky" right={"20px"}top='100px'>
         <Text color={'red'} fontSize='18px'>New!</Text>
-        {/* <Grid gap="40px" > */}
+
       <Heading size={'md'}>{single.subtitle}</Heading>
-      {/* <Heading size={'sl'}>{single.title}</Heading> */}
-      {/* <Text size={'md'}>{single.discount}</Text> */}
-      {/* <Text size={'md'}>{single.type}</Text> */}
       <Heading size={'md'}marginTop='30px'>{single.strike_price}</Heading>
-      {/* <Text size={'md'}>{single.discount}</Text> */}
       <Box marginTop='30px'>
       <Text size={'sl'}>Size:Select Size</Text>
         <Flex gap='10px'>
@@ -117,12 +112,11 @@ export const Singlepage = () => {
                 duration: 3000,
                 isClosable: true,
               })}} disabled={!size} style={{marginTop:'50px'  , backgroundColor:size?'#005eb8':"", width:'90%',height:"50px" ,borderRadius:'20px',}} >{size?"Add To Bag":"Please Select a Size"}</button>
-      {/* </Grid> */}
       <Text  marginTop='30px' size={'sl'}>4 interest-free payments of $3.12 with Klarna. Learn More</Text>
        </Box></Box>
     </Flex>
 
-    <Box>
+    <Box marginLeft={"20px"}>
       <Text>{single.subtitle} {single.category} {single.type}</Text>
 
       <Heading marginTop={"30px"} size={"sl"}>Details</Heading>
