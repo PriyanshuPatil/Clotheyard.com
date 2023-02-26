@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../Redux/AuthReducer/auth.actions";
 
 const SignupInputs = () => {
@@ -27,6 +28,7 @@ const SignupInputs = () => {
   const handleClick = () => setShow(!show);
   const toast = useToast();
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const handelSignUp = () => {
     if (first && last && email && pass && phone && dob) {
       //Backend Login will be here
@@ -41,6 +43,7 @@ const SignupInputs = () => {
             password: pass,
           })
         );
+
         toast({
           title: "User Successfully Registered",
           description: "Yaahoooo!",
@@ -48,6 +51,7 @@ const SignupInputs = () => {
           status: "success",
           isClosable: true,
         });
+        navigate("/login")
       } catch (error) {
         toast({
           title: "Invalid Credentials",

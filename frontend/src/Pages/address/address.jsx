@@ -1,14 +1,14 @@
 
 import { AddIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, FormLabel, grid, Heading, Input, InputGroup, Stack, Text, Textarea,  } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Button, Flex, FormLabel, grid, Heading, Image, Input, InputGroup, Stack, Text, Textarea, useToast,  } from '@chakra-ui/react'
+
 
 import {  useDisclosure } from '@chakra-ui/react'
 import {  Drawer, DrawerBody, DrawerFooter,
     DrawerHeader,DrawerOverlay, DrawerContent,
     DrawerCloseButton, } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useNavigate } from 'react-router-dom'
 
 function Address() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -20,11 +20,19 @@ function Address() {
   const [pincode,setpincodes]=useState('')
   const [house,sethouse]=useState('')
   const [area,setarea]=useState('')
-  
   var addata=[]
-const router=useRouter()
-const handleClick=(id)=>{
-  router.push(`/payment`)
+  const toast = useToast()
+const navigate=useNavigate()
+const handleClick=()=>{
+  navigate(`/`)
+  toast({
+    title: 'Payment  Successful.',
+    description: 'Your Order is Confirmed',
+    position: 'top',
+    status: 'success',
+    duration: 3000,
+    isClosable: true,
+  })
 }
   const submitdata=()=>{
     const newItem={
@@ -38,32 +46,31 @@ const handleClick=(id)=>{
   }
   addata.push(newItem)
   setAdaddress([...addaress,newItem])
-  localStorage.setItem("address",JSON.stringify(newItem))
 }
 
 console.log(addaress)
   return (
     <>
 
-    <Box w={'80%'} margin='auto'>
-  <Flex justifyContent={'space-between'}>
+    <Box w={'30%'} margin='auto' mt="20px">
+  {/* <Flex justifyContent={'space-between'}> */}
 
     <Box >
         <Heading>Choose Address</Heading>
         <Text>Detailed address will help our delivery partner reach your doorstep quickly</Text>
     </Box>
     <Box>
-        <Image width={400}height={400} src={'https://adn-static1.nykaa.com/media/wysiwyg/Payments/desktop-icons/header-address.svg'}alt='addrses'/>
+        <Image m="auto" width={350}height={350} src={'https://adn-static1.nykaa.com/media/wysiwyg/Payments/desktop-icons/header-address.svg'}alt='addrses'/>
     </Box>
-  </Flex>
-  <Flex gap='20px'>
-  <Box onClick={onOpen} cursor={'pointer'} textAlign={'center'} w={'400px'}h='180px' color={'#e80071'}display='grid' border='1px'alignItems={'center'}justifyContent={'center'}>
+  {/* </Flex> */}
+  <Flex gap='0px'>
+  <Box onClick={onOpen} cursor={'pointer'} textAlign={'center'} w={'400px'}h='100px' color={'#e80071'}display='grid' border='1px'alignItems={'center'}justifyContent={'center'}>
     <AddIcon margin='auto'/>
     <Heading size={'md'}>Add New Address</Heading>
   </Box>
   <Box  >
 {
-  addaress.map((ad)=><Box key={ad.id} w={'350px'}h='auto' border='1px' padding={'20px'}>
+  addaress.map((ad)=><Box key={ad.id} w={'350px'}h='auto' border='1px' padding={'10px'}>
     <Heading size={'md'}>{ad.name}</Heading>
     <Text size={'md'}>{ad.area}</Text>
     <Text size={'md'}>{ad.house}</Text>
@@ -86,10 +93,10 @@ console.log(addaress)
           <DrawerHeader borderBottomWidth='1px'>
           New Address
           </DrawerHeader>
-           <Heading size={'sm'}>Contact</Heading>
+           <Heading  mt="10px"  mb="10px" ml="20px" size={'sm'}>Contact</Heading>
           <DrawerBody>
             <Stack spacing='24px'>
-              <Box>
+              <Box >
                 {/* <FormLabel htmlFor='username'>Name</FormLabel> */}
                 <Input
                    onChange={(e)=>setAddress(e.target.value)}
@@ -98,6 +105,7 @@ console.log(addaress)
                   ref={firstField}
                   id='username'
                   placeholder='Name'
+                  mt="10px"
                 />
                   <Input
                       onChange={(e)=>setphone(e.target.value)}
@@ -105,7 +113,7 @@ console.log(addaress)
                   type='number'
                   ref={firstField}
                   id='username'
-                  placeholder='Phone'
+                  placeholder='Phone'  mt="10px"
                 />
                   <Input
                       onChange={(e)=>setemail(e.target.value)}
@@ -113,7 +121,7 @@ console.log(addaress)
                   type='email'
                   ref={firstField}
                   id='username'
-                  placeholder='Email ID(Optional)'
+                  placeholder='Email ID(Optional)'  mt="10px"
                 />
               </Box>
             
@@ -154,7 +162,7 @@ console.log(addaress)
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button onClick={submitdata} bgColor='#e80071'>Ship to this address</Button>
+            <Button onClick={()=>{submitdata(); onClose()}} bgColor='#e80071'>Confirm My Booking</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

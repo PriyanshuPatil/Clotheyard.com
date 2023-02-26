@@ -1,5 +1,4 @@
-import { Box, Button, Flex, Grid, Heading, Input, Text, useToast } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Button, Flex, Grid, Heading, Image, Input, Text, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { Accordion,  AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
   } from '@chakra-ui/react'
@@ -8,15 +7,10 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 const Payment = () => {
-  const [adss,setadds]=useState({})
-console.log(adss)
+  
 const [payment,setPayment]=useState(1)
-  const state=useSelector((store)=>store.cart)
-console.log(state)
-useEffect(() => setadds(JSON.parse(localStorage.getItem('address'))), [])
- let sum=0
-state.map((to)=>sum=Number(to.price)+sum)
-console.log(sum)
+ let sum=0;
+
 const toast = useToast()
   const paymentSuccess=()=>{
     toast({
@@ -240,16 +234,7 @@ product------
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-      {
-        // adss.map((ad)=>
-        <Box><Heading size={'md'}>{adss.name}</Heading>
-        <Text>{adss.house}</Text>
-        <Text>{adss.area}</Text>
-        <Text>{adss.pincode}</Text>
-        </Box>
-        
-        // )
-      }
+      
     </AccordionPanel>
   </AccordionItem>
 
