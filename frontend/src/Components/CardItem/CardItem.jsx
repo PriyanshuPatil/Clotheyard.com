@@ -1,100 +1,119 @@
-import React, { useState, useEffect } from 'react'
-import { json, useParams } from "react-router-dom";
-import { Box, Button, Flex, Grid, Heading, HStack, Image, Select, SimpleGrid, Stack, StackDivider, Text } from '@chakra-ui/react'
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
-import axios from 'axios'
-import "../../Pages/Cart/cart.css"
-import { Radio, RadioGroup } from '@chakra-ui/react'
-let subsum=0
-let arr=[0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-// console.log(arr)
-// console.log(subsum)
+import React from "react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Select,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import { Card, CardBody } from "@chakra-ui/react";
 
-const deletedata=(id)=>{
-  axios.delete(`https://vercel-deploy-jade-one.vercel.app/cart/${id}`)
-      window.location.reload()
-    }
-export const CardItem = ({e,i}) => {
-  // console.log(i)
-  const [quantity, setQuantity] = useState(1)
-  const [value, setValue] = React.useState('1')
-  // useEffect(()=>{
-  //   arr[i]=(e.price*quantity)
-    
-  // })
-  localStorage.setItem("sum",JSON.stringify(arr))
- 
+import "../../Pages/Cart/cart.css";
+import { Radio, RadioGroup } from "@chakra-ui/react";
 
-   const datas=[{
-    quantity:quantity,
-    index:i
-   }]
-  const setQuantitydata=(data)=>{
-
-    let sumvalue=data.target.value
-    setQuantity(sumvalue)
-    // aqq.push(sumvalue)
-  }
-
-  // useEffect(()=>{
-
-  arr.map((eq)=>subsum+=eq)
-  console.log(arr)
-  console.log(subsum)
-
+export const CardItem = ({ e, handleDelete, handleUpdate }) => {
   return (
     <>
- <tr key={e._id} >
-         
-      <td > <Box className='cart'>
-        <Card marginBottom={"40px"} 
-      direction={{ base: 'column', sm: 'row' }}
- overflow='hidden' 
-          variant='outline'>
+      {" "}
+      <Box>
+        <Card
+          marginBottom={"40px"}
+          direction={{ base: "column", sm: "row" }}
+          overflow="hidden"
+          variant="outline"
+        >
           <Image
-            objectFit='cover'
-            maxW={{ base: '100%', sm: '200px' }}
-            src={e.images}
-            alt='Caffe Latte'
+            objectFit="cover"
+            maxW={{ base: "150px", md: "200px" }}
+            src={e.product.images[0]}
+            alt="Caffe Latte"
           />
-        
+
           <Stack>
             <CardBody>
-              <Heading size='md'>{e.subtitle}</Heading>
-              <Text py='2'>{`Color : Multi`}
-              </Text>
-         <Text py='2'>{`Size : ${ e.size}`}
-              </Text>
-              <RadioGroup marginTop={"20px"} onChange={setValue} value={value}>
-      <Stack direction='column'>
-        <Radio value='1'>Ship To Me</Radio>
-        <Radio value='2'>In-Store Pickup</Radio>
-
-      </Stack>
-    </RadioGroup>
+              <Heading size="md">{e.product.subtitle}</Heading>
+              <Text py="1">{`Color : Multi`}</Text>
+              <Flex py="1" alignItems={"center"}>
+                {`Size : `}{" "}
+                <Select
+                  name=""
+                  id="queti"
+                  w={"fit-content"}
+                  value={e.size}
+                  onChange={(event) => {
+                    let payload = { size: event.target.value };
+                    handleUpdate(e._id, payload);
+                  }}
+                >
+                  {e.product.size.map((item) => (
+                    <option value={item} key={item}>
+                      {item}
+                    </option>
+                  ))}
+                </Select>{" "}
+              </Flex>
+              <RadioGroup marginTop={"10px"}>
+                <HStack direction="column">
+                  <Radio value="1">Ship To Me</Radio>
+                  <Radio value="2">In-Store Pickup</Radio>
+                </HStack>
+              </RadioGroup>
+              <Heading pt={"10px"} fontSize={"lg"} color={"gray"}>
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(e.product.discounted_price)}
+                /-{" "}
+              </Heading>
+              <Heading pt={"10px"} fontSize={"lg"}>
+                Total Price:-{" "}
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(e.product.discounted_price * e.quantity)}
+                /-{" "}
+              </Heading>
+              <Flex
+                justifyContent={"space-between"}
+                alignItems={"center"}
+                pt={"15px"}
+              >
+                {"Select QTY:"}
+                <Select
+                  name=""
+                  id="queti"
+                  w={"fit-content"}
+                  value={e.quantity}
+                  onChange={(event) => {
+                    let payload = { quantity: event.target.value };
+                    handleUpdate(e._id, payload);
+                  }}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </Select>
+                <Button
+                  onClick={() => {
+                    handleDelete(e._id);
+                  }}
+                  variant="solid"
+                  colorScheme="red"
+                >
+                  {" "}
+                  Remove{" "}
+                </Button>
+              </Flex>
             </CardBody>
-
           </Stack>
-        </Card></Box></td>
-        <td>
-         <Stack>
-          <Grid gap={'40px'}>
-        
-         
-          <Select onChange={(ee)=>setQuantitydata(ee)} name="" id="queti">
-          <option  value="1">1</option>
-            <option   value="2">2</option>
-            <option   value="3">3</option>
-            <option  value="4">4</option>
-            <option  value="5">5</option>
-        </Select>
-              <Button onClick={()=>deletedata(e.id)} variant='link' colorScheme='lightgrey'>   Remove </Button>
-          </Grid>
-          {/* //localStorage.setItem("sum",JSON.stringify(datas)) */}
-              </Stack></td>
-              <td style={{padding:"40px"}}>{arr[i+1]=(e.price*quantity)} </td>
-        </tr>
- 
-        </>
-     )   
-}
+        </Card>
+      </Box>
+    </>
+  );
+};

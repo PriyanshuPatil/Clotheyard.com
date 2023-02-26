@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Dashboard } from "../Pages/Admin/Dashboard";
-import { Orders } from "../Pages/Admin/Orders";
+import { Orders } from "../Pages/Admin/orders";
 import { Products } from "../Pages/Admin/Products";
 import { Users } from "../Pages/Admin/Users";
 import { Cart } from "../Pages/Cart/cart";
@@ -20,7 +20,7 @@ const AllRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/demo" element={<DemoPage />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="/single/:_id" element={<Singlepage />} />
+      <Route path="/singlepage/:_id" element={<Singlepage />} />
       <Route path="/products/:target" element={<Mens />} />
       <Route path="/admin/orders" element={<Orders />} />
       <Route path="/admin/dashboard" element={<Dashboard />} />
